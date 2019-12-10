@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_112606) do
+ActiveRecord::Schema.define(version: 2019_12_10_113301) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "list_tips", force: :cascade do |t|
+    t.bigint "tip_id"
+    t.bigint "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_list_tips_on_list_id"
+    t.index ["tip_id"], name: "index_list_tips_on_tip_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"
@@ -51,6 +60,8 @@ ActiveRecord::Schema.define(version: 2019_12_10_112606) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "list_tips", "lists"
+  add_foreign_key "list_tips", "tips"
   add_foreign_key "lists", "users"
   add_foreign_key "tips", "users"
 end
