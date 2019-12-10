@@ -1,4 +1,22 @@
 <div class="web-container">
-<h1>Tips#show</h1>
-<p>Find me in app/views/tips/show.html.erb</p>
+  <h1> <%= @tip.title %></h1>
+  <div>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+    <i class="far fa-star"></i>
+  </div>
+  <p> 650 m </p>
+  <p>"<%= @tip.review %>"</p>
+  <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100%>
+  <btn class="pill-category"> <%= @tip.category %> </btn>
+  <a class="take-me-there-button" href="">Take me there</a>
+  <p> <%= @tip.address %> </p>
+  <p> <%= @tip.title %> </p>
+  <h2> Location </h2>
+  <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100%>
 </div>
+<!--
+
+(rating: 5, review: "Amazing place you really need to try", category: "Food", title: "Restaurante Igueldo", address: "Avenida Santiago", user_id: 1) -->
