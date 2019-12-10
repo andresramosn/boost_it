@@ -36,9 +36,9 @@ private
 
   def set_user
     @user = User.find(params[:id])
+  end
 
   def list_params
     params.require(:list).permit(:name)
-
   end
 end
