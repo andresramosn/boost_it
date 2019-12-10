@@ -1,6 +1,6 @@
 <div class="web-container">
-  <h1> <%= @tip.title %></h1>
-  <div class="d-flex">
+  <h1 id="h1-show"> <%= @tip.title %></h1>
+  <div class="d-flex justify-content-between pb-2">
     <div>
       <i class="far fa-star"></i>
       <i class="far fa-star"></i>
@@ -10,9 +10,14 @@
     </div>
     <p> 650 m </p>
   </div>
-  <p>"<%= @tip.review %>"</p>
+  <h2>The best vasc restaurant in town</h2>
+  <div class="d-flex pt-2 pb-2">
+    <img class="avatar-show-page" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+    <p>"<%= @tip.review %>"</p>
+  </div>
+
   <div class="d-flex justify-content-center align-items-center" style="position: relative;">
-    <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100%>
+    <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" >
     <btn class="pill-category"> <%= @tip.category %> </btn>
   </div>
   <div class="text-center">
@@ -20,7 +25,7 @@
   </div>
   <h2> Location </h2>
   <p> <%= @tip.address %> </p>
-  <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100%>
+  <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" >
 </div>
 <!--
 
