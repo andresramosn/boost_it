@@ -1,0 +1,23 @@
+.form-button {
+  border-radius: 4px;
+  color: white;
+  width: 100%;
+  background-color: #9E005E;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 15px;
+  margin-bottom: 100px;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none !important;
+  margin-bottom: 15px;
+   &:hover {
+    color: white;
+    background-color: rgba(158, 0, 94, 0.61);
+  }
+}
+
