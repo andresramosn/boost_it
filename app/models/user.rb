@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :tips
   has_many :lists
   has_many :shares
+  has_many :properties
 end

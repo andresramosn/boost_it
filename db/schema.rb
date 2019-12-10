@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_10_113536) do
+ActiveRecord::Schema.define(version: 2019_12_10_114247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,24 @@ ActiveRecord::Schema.define(version: 2019_12_10_113536) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_properties_on_user_id"
+  end
+
+  create_table "property_lists", force: :cascade do |t|
+    t.bigint "property_id"
+    t.bigint "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_property_lists_on_list_id"
+    t.index ["property_id"], name: "index_property_lists_on_property_id"
   end
 
   create_table "shares", force: :cascade do |t|
@@ -72,6 +90,9 @@ ActiveRecord::Schema.define(version: 2019_12_10_113536) do
   add_foreign_key "list_tips", "lists"
   add_foreign_key "list_tips", "tips"
   add_foreign_key "lists", "users"
+  add_foreign_key "properties", "users"
+  add_foreign_key "property_lists", "lists"
+  add_foreign_key "property_lists", "properties"
   add_foreign_key "shares", "lists"
   add_foreign_key "shares", "users"
   add_foreign_key "tips", "users"
