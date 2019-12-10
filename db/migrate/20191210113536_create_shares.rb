@@ -1,4 +1,4 @@
-class CreateShare < ActiveRecord::Migration[5.2]
+class CreateShares < ActiveRecord::Migration[5.2]
   def change
     create_table :share do |t|
       t.references :user, foreign_key: true
