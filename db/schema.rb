@@ -51,13 +51,13 @@ ActiveRecord::Schema.define(version: 2019_12_10_162550) do
     t.index ["property_id"], name: "index_property_lists_on_property_id"
   end
 
-  create_table "share", force: :cascade do |t|
+  create_table "shares", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "list_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["list_id"], name: "index_share_on_list_id"
-    t.index ["user_id"], name: "index_share_on_user_id"
+    t.index ["list_id"], name: "index_shares_on_list_id"
+    t.index ["user_id"], name: "index_shares_on_user_id"
   end
 
   create_table "tips", force: :cascade do |t|
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(version: 2019_12_10_162550) do
   add_foreign_key "properties", "users"
   add_foreign_key "property_lists", "lists"
   add_foreign_key "property_lists", "properties"
-  add_foreign_key "share", "lists"
-  add_foreign_key "share", "users"
+  add_foreign_key "shares", "lists"
+  add_foreign_key "shares", "users"
   add_foreign_key "tips", "users"
 end
