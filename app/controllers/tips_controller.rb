@@ -1,8 +1,11 @@
 class TipsController < ApplicationController
+
   def index
+
   end
 
   def show
+    @tip = Tip.find(params[:id])
   end
 
   def new
