@@ -1,20 +1,25 @@
 <div class="web-container">
   <h1> <%= @tip.title %></h1>
-  <div>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
-    <i class="far fa-star"></i>
+  <div class="d-flex">
+    <div>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+    </div>
+    <p> 650 m </p>
   </div>
-  <p> 650 m </p>
   <p>"<%= @tip.review %>"</p>
-  <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100%>
-  <btn class="pill-category"> <%= @tip.category %> </btn>
-  <a class="take-me-there-button" href="">Take me there</a>
-  <p> <%= @tip.address %> </p>
-  <p> <%= @tip.title %> </p>
+  <div class="d-flex justify-content-center align-items-center" style="position: relative;">
+    <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100%>
+    <btn class="pill-category"> <%= @tip.category %> </btn>
+  </div>
+  <div class="text-center">
+    <button class="take-me-there-button">Take me there</button>
+  </div>
   <h2> Location </h2>
+  <p> <%= @tip.address %> </p>
   <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100%>
 </div>
 <!--
