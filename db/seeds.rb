@@ -16,5 +16,5 @@ user = User.create(email: "imediabar@gmail.com", password: "123456")
 tip = Tip.new(rating: 5, review: "Amazing place you really need to try", category: "Food", title: "Restaurante Igueldo", address: "Avenida Santiago", user_id: 1)
 tip.save!
 
-puts "#{Tip.count} tips created"
+puts "#{Tip.count} tip created"
 
