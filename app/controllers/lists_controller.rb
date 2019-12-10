@@ -1,5 +1,8 @@
 class ListsController < ApplicationController
+  before_action :set_user
+
   def index
+    @lists = List.where(user_id: @user.id)
   end
 
   def show
@@ -28,9 +31,14 @@ class ListsController < ApplicationController
   def delete
   end
 
-  private
+
+private
+
+  def set_user
+    @user = User.find(params[:id])
 
   def list_params
     params.require(:list).permit(:name)
+
   end
 end

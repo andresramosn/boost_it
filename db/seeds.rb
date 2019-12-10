@@ -6,15 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Cleaning database'
+
+User.destroy_all
+List.destroy_all
 Tip.destroy_all
+ListTip.destroy_all
 
-puts 'Creating tips'
 
-user = User.create(email: "imediabar@gmail.com", password: "123456")
-
-tip = Tip.new(rating: 5, review: "Amazing place you really need to try", category: "Food", title: "Restaurante Igueldo", address: "Avenida Santiago", user_id: 1)
-tip.save!
-
-puts "#{Tip.count} tip created"
-
+User.create(email: "andres@hotmail.com", password: "123456")
+List.create(name: "Resto", user_id: 1)
+Tip.create(title: "Can Ros", user_id: 1, rating: 5, category: "restaurants", address: "Bailen 152, Barcelona")
+ListTip.create(list_id: 1, tip_id: 1)
