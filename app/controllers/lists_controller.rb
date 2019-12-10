@@ -6,9 +6,17 @@ class ListsController < ApplicationController
   end
 
   def new
+    @list = List.new
   end
 
   def create
+    @list = List.new(list_params)
+    @list.user = @user
+    if @list.save
+      redirect_to lists_path # redirecting to index
+    else
+      render :new
+    end
   end
 
   def edit
@@ -18,5 +26,11 @@ class ListsController < ApplicationController
   end
 
   def delete
+  end
+
+  private
+
+  def list_params
+    params.require(:list).permit(:name)
   end
 end

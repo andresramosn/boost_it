@@ -13,6 +13,13 @@ class TipsController < ApplicationController
   end
 
   def create
+    @tip = Tip.new(tip_params)
+    @tip.user = @user
+    if @tip.save
+      redirect_to tip_path(@tip) # redirecting to show
+    else
+      render :new
+    end
   end
 
   def edit
@@ -24,9 +31,9 @@ class TipsController < ApplicationController
   def delete
   end
 
-  # private
+  private
 
-  # def tip_params
-  #   params.require(:tip).permit(:rating, :review, :title, :category, :address, :user_id)
-  # end
+  def tip_params
+    params.require(:tip).permit(:rating, :review, :category, :title, :address)
+  end
 end
