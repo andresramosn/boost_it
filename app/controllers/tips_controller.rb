@@ -5,18 +5,26 @@ class TipsController < ApplicationController
   end
 
   def show
+    @tip = Tip.geocoded #returns Tip with coordinates
     @tip = Tip.find(params[:id])
+    @markers = [{
+      lat: @tip.latitude,
+      lng: @tip.longitude
+    }]
   end
 
   def new
     @tip = Tip.new
+    @list = List.find(params[:list_id])
   end
 
   def create
     @tip = Tip.new(tip_params)
-    @tip.user = @user
+    @tip.user = current_user
+    @list = List.find(params[:list_id])
     if @tip.save
-      redirect_to tip_path(@tip) # redirecting to show
+      ListTip.create(tip_id: @tip.id, list_id: @list.id)
+      redirect_to lists_path # redirecting to lists
     else
       render :new
     end

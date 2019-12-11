@@ -1,2 +1,24 @@
-<h1>Tips#new</h1>
-<p>Find me in app/views/tips/new.html.erb</p>
+<div class="web-container">
+      <h2 class="text-center">Create your tip</h2>
+
+      <%= simple_form_for([@list, @tip]) do |c| %> <!-- this is the action that tells the button submit where to -->
+          <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+          <%= c.input :category %>
+          <%= c.input :title %>
+          <%= c.input :address %>
+          <%= c.input :review %>
+          <%= c.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
+          </div>
+          <div class="form-actions">
+          <%= c.button :submit,  "Save", class: "form-button" %>
+          </div>
+      <% end %>
+      <br>
+      <br>
+      <br>
+
+</div>
+
+
