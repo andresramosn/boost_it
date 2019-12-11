@@ -1,21 +1,15 @@
 <div class="web-container">
       <h2 class="text-center">Create your tip</h2>
 
-
       <%= simple_form_for([@list, @tip]) do |c| %> <!-- this is the action that tells the button submit where to -->
-        <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
-
+          <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
           <%= c.input :category %>
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
-          <label class="choose-file-button">
-            Choose a file
-            <span style="display:none;">
-              <%= c.input :photo %>
-            </span>
-          </label>
-          <%= c.input :photo_cache, as: :hidden %>
+          <%= c.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
+
           </div>
           <div class="form-actions">
           <%= c.button :submit,  "Save", class: "form-button" %>

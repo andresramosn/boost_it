@@ -6,5 +6,9 @@ import { toggleMap } from '../plugins/toggle_map';
 
 initMapbox();
 
+import { previewImageOnFileSelect } from '../components/photo_preview';
+previewImageOnFileSelect();
+
 toggleMap();
+
 
