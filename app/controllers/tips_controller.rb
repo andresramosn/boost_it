@@ -10,11 +10,13 @@ class TipsController < ApplicationController
 
   def new
     @tip = Tip.new
+    @list = List.find(params[:format])
   end
 
   def create
     @tip = Tip.new(tip_params)
-    @tip.user = @user
+    @tip.user = current_user
+    @list =
     if @tip.save
       redirect_to tip_path(@tip) # redirecting to show
     else
