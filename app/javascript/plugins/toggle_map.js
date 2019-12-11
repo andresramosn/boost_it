@@ -1,29 +1,20 @@
 
-const location = document.querySelector('#location-div');
-console.log(location);
+const toggleMap = () => {
+  const info = document.getElementById('show-info');
+  const location = document.getElementById('location-div');
+  const button = document.getElementById('toogle-map');
 
-const button = document.querySelector('#toogle-map');
+  button.addEventListener("click", (event) => {
+    if (location.classList.contains("d-none")) {
+      button.innerHTML = "Show details"
+      location.classList.remove("d-none")
+      info.classList.add("d-none");
+    } else {
+      button.innerHTML = "Show map"
+      location.classList.add("d-none")
+      info.classList.remove("d-none");
+    };
+  });
+};
 
-console.log(button);
-
-button.addEventListener("click", (event) => {
-  console.log(event);
-  location.style.display = "block";
-});
-
-
-// const toggleMap = () => {
-//   button.addEventListener("click", (event) => {
-//   console.log(event);
-//   if (location.style === "none") {
-//       location.style.display = "block";
-//   } else {
-//     location.style.display = "none";
-//     };
-//   });
-// };
-
-// export { toggleMap };
-
-
-
+export { toggleMap };
