@@ -1,0 +1,19 @@
+.list-card {
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  display: flex;
+  height: 125px;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  border-radius: 5px;
+  align-items: center;
+  color: white;
+  margin-top: 50px;
+}
+
+.list-card h2 {
+  font-family: Open-sans, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+

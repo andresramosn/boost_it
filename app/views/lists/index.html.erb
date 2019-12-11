@@ -1,30 +1,48 @@
-<%if user_signed_in? == true %>
-        <li class="nav-item dropdown">
-          <%= image_tag "burger_menu.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      <% else %>
+<div class="settings">
+  <%if user_signed_in? == true %>
+    <li class="nav-item dropdown">
+      <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        <% else %>
           <%=  %>
-       <% end %>
-     </li>
+        <% end %>
+        </div>
+    </li>
+</div>
 
+
+<div class="web-container">
+
+<br>
 <h1>Your lists</h1>
-<%= link_to "+new list", new_list_path %>
-<ul>
-All tips
-<% current_user.tips.each do |tip| %>
-<li><%= tip.title%></li>
-<% end %>
-<% @lists.each do |list| %>
-<%= list.name %>
-<% list.tips.each do |tip| %>
-<li><%= tip.title%></li>
-<% end %>
-<li> <%= link_to "+add a tip", new_list_tip_path(list.id) %> </li>
-<% end %>
-</ul>
-<% # all lists %>
-<% # lists by category %>
-<% # show tip index per category %>
-<% # show tips detail list %>
+
+<p id="p-centered">Add new lists you can share with your guests</p>
+<div class="button-container">
+<%= link_to "New List", new_list_path, class:"add-button" %>
+</div>
+
+<div class="list-card">
+  <h2>All Tips</h2>
+    <% current_user.tips.each do |tip| %>
+    <h2><%= tip.title%></h2>
+      <% end %>
+</div>
+    <div class="card-container">
+     <% @lists.each do |list| %>
+
+        <div class="list-card">
+          <h2> <%= list.name %> </h2>
+        </div>
+      <% list.tips.each do |tip| %>
+    <%= tip.title%>
+      <% end %>
+
+    <%= link_to "+add a tip", new_tip_path %> </li>
+      <% end %>
+    </div>
+
+
+
+</div>
