@@ -18,24 +18,29 @@
 <br>
 <h1>Your lists</h1>
 <p id="p-centered">Add new lists you can share with your guests</p>
-<div class="button-container" style="text-align: center; padding: inherit;">
+<div class="button-container">
 <%= link_to "New List", new_list_path, class:"add-button" %>
 </div>
 
 <div class="list-card">
-  <ul>
+  <h2>All Tips</h2>
+
     <% current_user.tips.each do |tip| %>
-    <li><%= tip.title%></li>
+    <h2><%= tip.title%></h2>
       <% end %>
-      <% @lists.each do |list| %>
-      <%= list.name %>
-      <% list.tips.each do |tip| %>
-    <li><%= tip.title%></li>
-      <% end %>
-    <li> <%= link_to "+add a tip", new_tip_path %> </li>
-      <% end %>
-  </ul>
 </div>
+
+     <% @lists.each do |list| %>
+     <div class="list-card">
+    <h2>  <%= list.name %> </h2>
+    </div>
+      <% list.tips.each do |tip| %>
+    <%= tip.title%>
+      <% end %>
+    <%= link_to "+add a tip", new_tip_path %> </li>
+      <% end %>
+
+<%link_to list_path(:id)%>
 
 
 
