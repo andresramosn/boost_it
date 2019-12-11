@@ -9,7 +9,7 @@
      </li>
 
 <h1>Your lists</h1>
-
+<%= link_to "+new list", new_list_path %>
 <ul>
 All tips
 <% current_user.tips.each do |tip| %>
@@ -20,6 +20,7 @@ All tips
 <% list.tips.each do |tip| %>
 <li><%= tip.title%></li>
 <% end %>
+<li> <%= link_to "+add a tip", new_tip_path %> </li>
 <% end %>
 </ul>
 <% # all lists %>
