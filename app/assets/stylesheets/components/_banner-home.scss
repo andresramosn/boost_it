@@ -1,7 +1,13 @@
 .banner-home {
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?cs=srgb&dl=woman-wearing-pink-collared-half-sleeved-top-1036623.jpg&fm=jpg");
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.35)), url("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?cs=srgb&dl=women-s-white-and-black-button-up-collared-shirt-774909.jpg&fm=jpg");
   background-size: cover;
   background-position: center;
   height: 100vh;
   width: 100vw;
+}
+
+.banner-home a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
 }
