@@ -5,7 +5,12 @@ class TipsController < ApplicationController
   end
 
   def show
+    @tip = Tip.geocoded #returns Tip with coordinates
     @tip = Tip.find(params[:id])
+    @markers = [{
+      lat: @tip.latitude,
+      lng: @tip.longitude
+    }]
   end
 
   def new

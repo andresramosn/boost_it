@@ -20,3 +20,7 @@ Tip.create(title: "Can Ros", user_id: 1, rating: 5, category: "restaurants", add
 ListTip.create(list_id: 1, tip_id: 1)
 
 puts "#{User.count} users created & #{Tip.count} tips created"
+
+# List.create(name: "resto", user_id: 2); List.create(name: "bars", user_id: 2); List.create(name: "culture", user_id: 2
+# Tip.create(title: "Can Ros", user_id: 2); Tip.create(title: "Blah bla", user_id: 2); Tip.create(title: "Hello", user_id: 2)
+# ListTip.create(list_id: 2, tip_id: 2); ListTip.create(list_id: 3, tip_id: 3); ListTip.create(list_id: 4, tip_id: 4);

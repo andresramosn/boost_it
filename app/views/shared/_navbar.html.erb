@@ -1,7 +1,21 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand" href="#">
-    <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "boostitlogo.png" %>
-    <% end %>
-  </a>
-</div>
+<% if controller_name != "pages"%>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <a class="navbar-brand" href="#">
+      <%= link_to new_list_path, class: "navbar-brand" do %>
+      <%= image_tag "boostitlogo.png" %>
+      <% end %>
+    </a>
+      <a class="navbar-brand" href="#">
+      <%= link_to lists_path, class: "navbar-brand" do %>
+      <%= image_tag "boostitlogo.png" %>
+      <% end %>
+    </a>
+      <a class="navbar-brand" href="#">
+      <%= link_to new_tip_path, class: "navbar-brand" do %>
+      <%= image_tag "boostitlogo.png" %>
+      <% end %>
+    </a>
+  </div>
+<%else%>
+  <%= %>
+<%end%>

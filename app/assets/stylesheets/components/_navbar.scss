@@ -1,6 +1,10 @@
 .navbar-lewagon {
+  position: fixed;
   justify-content: center;
+  bottom: 0;
   background: white;
+  width: 100%;
+  overflow: hidden;
 }
 
 .navbar-lewagon .navbar-collapse {
