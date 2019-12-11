@@ -6,13 +6,14 @@
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
-          <label class="choose-file-button">
+          <!-- <label class="choose-file-button">
             Choose a file
             <span style="display:none;">
-              <%= c.input :photo %>
+
             </span>
-          </label>
-          <%= c.input :photo_cache, as: :hidden %>
+          </label> -->
+          <%= c.input :photo, input_html: { class: 'hidden', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
           </div>
           <div class="form-actions">
           <%= c.button :submit,  "Save", class: "form-button" %>
