@@ -4,11 +4,11 @@
  <div class="row justify-content-center">
     <div class="col-xs-12 col md-4">
       <h2 class="text-center">Name your list</h2>
-      <%= simple_form_for([@list]) do |c| %>
+      <%= simple_form_for(@list) do |c| %> <!-- this is the action that tells the button submit where to -->
         <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
           <%= c.input :name %>
          <!--  <div class="main-button"> -->
-          <%= c.button :submit, "Submit" %> <!-- submit needs to send the data to the list controller with a user id and a list id-->
+          <%= c.button :submit, "Submit" %>
         </div>
           <% end %>
       </div>
