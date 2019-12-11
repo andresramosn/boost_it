@@ -1,9 +1,21 @@
 <div class="web-container">
 <h1>this is your new view of the lists</h1>
 
+ <div class="row justify-content-center">
+    <div class="col-xs-12 col md-4">
+      <h2 class="text-center">Name your list</h2>
+      <%= simple_form_for([@list]) do |c| %>
+        <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+          <%= c.input :name %>
+         <!--  <div class="main-button"> -->
+          <%= c.button :submit, "Submit" %> <!-- submit needs to send the data to the list controller with a user id and a list id-->
+        </div>
+          <% end %>
+      </div>
+    </div>
+ <!--  </div> -->
 
-  <div class="main-button">
+ </div>
 
 
-  </div>
-</div>
+
