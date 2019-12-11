@@ -13,12 +13,17 @@ button.addEventListener("click", (event) => {
 
 
 // const toggleMap = () => {
-//   location.style.display = "none";
+//   button.addEventListener("click", (event) => {
+//   console.log(event);
+//   if (location.style === "none") {
+//       location.style.display = "block";
+//   } else {
+//     location.style.display = "none";
+//     };
+//   });
 // };
 
-
-// element.style.display = "";
-
 // export { toggleMap };
+
 
 
