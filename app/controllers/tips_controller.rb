@@ -15,6 +15,7 @@ class TipsController < ApplicationController
 
   def new
     @tip = Tip.new
+    @list = List.find(params[:format])
   end
 
   def create

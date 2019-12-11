@@ -21,7 +21,7 @@ All tips
 <% list.tips.each do |tip| %>
 <li><%= tip.title%></li>
 <% end %>
-<li> <%= link_to "+add a tip", new_tip_path %> </li>
+<li> <%= link_to "+add a tip", new_tip_path(list.id) %> </li>
 <% end %>
 </ul>
 <% # all lists %>
