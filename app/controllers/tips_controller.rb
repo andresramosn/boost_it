@@ -19,7 +19,7 @@ class TipsController < ApplicationController
 
   def create
     @tip = Tip.new(tip_params)
-    @tip.user = @user
+    @tip.user = current_user
     if @tip.save
       redirect_to tip_path(@tip) # redirecting to show
     else
