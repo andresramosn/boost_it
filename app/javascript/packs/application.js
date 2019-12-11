@@ -5,4 +5,6 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import './previewImageOnFileSelect'
+
+import { previewImageOnFileSelect } from '../components/photo_preview';
+previewImageOnFileSelect();
