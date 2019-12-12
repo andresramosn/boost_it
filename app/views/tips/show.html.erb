@@ -1,44 +1,44 @@
 <div class="show-container">
-  <div class="d-flex justify-content-between align-items-center mb-3">
-    <h1 id="h1-show"> <%= @tip.title %></h1>
-    <button id="toogle-map">Show map</button>
-  </div>
-  <p> <%= @tip.address %></p>
-  <div class="d-flex justify-content-between pb-2">
-    <div class= stars>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h1 id="h1-show"> <%= @tip.title %></h1>
+      <button id="toogle-map">Show map</button>
     </div>
+      <p> <%= @tip.address %></p>
+    <div class="d-flex justify-content-between pb-2">
+      <div class= stars>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      <i class="far fa-star"></i>
+      </div>
     </div>
-  <div >
+  <div id="show-info" >
     <div class="d-flex py-2">
       <!-- missing make the avatar dynamic, we need to ask the user to update a picture for that -->
       <img class="avatar-show-page" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
       <p>"<%= @tip.review %>"</p>
     </div>
-</div>
-</div>
     <div class="d-flex justify-content-end align-items-center" id= "photo-show-page" style="position: relative;">
       <%= cl_image_tag @tip.photo if @tip.photo.present? %>
       <btn class="pill-category"> <%= @tip.category %> </btn>
     </div>
+  </div>
 
-  <div id="location-div" class="d-none">
-    <h2> Location </h2>
-    <p1> <%= @tip.address %></p1>  <p>650 m from home</p>
+
+<div id="location-div" class="d-none">
+  <h2> Location </h2>
+  <p1> <%= @tip.address %></p1>  <p>650 m from home</p>
     <!-- <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" > -->
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
+</div>
   <div class="text-center">
     <button class="take-me-there-button">Take me there</button>
-  </div>
-
+</div>
+</div>
 <!--
 
 (rating: 5, review: "Amazing place you really need to try", category: "Food", title: "Restaurante Igueldo", address: "Avenida Santiago", user_id: 1) -->
