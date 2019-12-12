@@ -5,6 +5,7 @@
   background: white;
   width: 100%;
   overflow: hidden;
+  box-shadow: inset 0 -2px 6px 6px white, inset 0 2px 2px 1px #000000;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,5 +13,9 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 50px;
+  width: 40px;
+  padding: 5px 5px;
+  margin-right: 9px;
+  margin-left: 15px;
 }
+
