@@ -1,11 +1,13 @@
-.web-container {
+
+
+.show-container {
   width: 90%;
   margin: 0px auto;
   padding-top: 25px;
-  padding-bottom: 150px;
+  padding-bottom: 0px;
 }
 
-.web-container h1 {
+.show-container h1 {
   font-size: 28px;
   font-family: Poppins;
   font-style: normal;
@@ -14,14 +16,14 @@
   text-align: center;
 }
 
-.web-container h2 {
+.show-container h2 {
   font-size: 22.5px;
   font-family: Poppins;
   font-style: normal;
   font-weight: 600;
 }
 
-.web-container p {
+.show-container p {
   // position: absolute;
   font-size: 18px;
   font-family: Poppins;
@@ -50,16 +52,22 @@
   font-weight: normal;
 }
 
-.web-container .address-tips-index {
-  margin-top: 14px;
-}
 
 .stars {
+
       margin-left: 217px;
 }
 
 #show-info {
+
   p {
      margin-bottom: 0px;
   }
 }
+
+// #photo-show-page {
+//   width: 100%;
+//   img {
+//     height:
+//   }
+// }

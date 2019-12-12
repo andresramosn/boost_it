@@ -25,20 +25,23 @@
 
   <%= link_to tips_path do%>
     <div class="card-container">
-      <div class="list-card">
+      <div class="list-card" style="background-image: url(https://source.unsplash.com/random?restaurant);">
          <h2>All Tips</h2>
         </div>
     </div>
   <% end %>
-
-<% @lists.each do |list| %>
- <%= link_to list_path(list) do%>
-  <div class="card-container">
-    <div class="list-card">
+  
+  <% @lists.each do |list| %>
+    <%= link_to list_path(:id) do%>
+      <div class="card-container">
+        <% if(list.tips.sample) %>
+          <div class="list-card" style="background-image: url(<%= list.tips.last.photo %>);">
+        <% else %>
+          <div class="list-card">
+        <% end %>
         <h2> <%= list.name %> </h2>
-    </div>
-  </div>
-      <% end %>
-  <%end%>
-
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 </div>
