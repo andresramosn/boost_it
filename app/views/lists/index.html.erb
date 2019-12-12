@@ -12,7 +12,6 @@
     </li>
 </div>
 
-
 <div class="web-container">
 
   <br>
@@ -33,7 +32,7 @@
   <% end %>
 
 <% @lists.each do |list| %>
- <%= link_to list_path(:id) do%>
+ <%= link_to list_path(list) do%>
   <div class="card-container">
     <div class="list-card">
         <h2> <%= list.name %> </h2>

@@ -5,6 +5,7 @@
       <%= link_to "Add a tip", new_list_path, class:"add-button" %>
     </div>
 
+
   <% @my_tips.each do |my_tip| %>
     <div class="tips-index-links relative">
       <%= link_to "", tip_path(my_tip), class:"absolute-0-0"%>
@@ -37,3 +38,4 @@
     </div>
   <% end %>
 </div>
+

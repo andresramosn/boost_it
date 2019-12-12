@@ -1,18 +1,12 @@
 <div class="web-container">
       <h2 class="text-center">Create your tip</h2>
 
-      <%= simple_form_for(@tip) do |c| %> <!-- this is the action that tells the button submit where to -->
+      <%= simple_form_for :tips_lists, url: {:action => "create"} do |c| %> <!-- this is the action that tells the button submit where to -->
           <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
           <%= c.input :category %>
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
-          <select name="lists" id="">
-              <option></option>
-            <% @lists.each do |list| %>
-              <option value="<%= list %>"><%= list.capitalize %></option>
-            <% end %>
-          </select>
           <%= c.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
 
@@ -22,5 +16,3 @@
           </div>
       <% end %>
 </div>
-
-

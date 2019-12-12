@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tips_lists/new'
+  get 'tips_lists/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -6,7 +8,10 @@ Rails.application.routes.draw do
 
 
   resources :lists, only: [:index, :new, :create, :show] do
-    resources :tips, only: [:new, :create]
+    resources :tips_lists, only: [:new, :create, :show]
   end
+
+  resources :tips, only: [:new, :create]
+
   resources :tips, only: [:index, :show]
 end
