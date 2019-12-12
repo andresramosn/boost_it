@@ -30,9 +30,9 @@
         </div>
     </div>
   <% end %>
-  
+
   <% @lists.each do |list| %>
-    <%= link_to list_path(:id) do%>
+    <%= link_to list_path(list.id) do%>
       <div class="card-container">
         <% if(list.tips.sample) %>
           <div class="list-card" style="background-image: url(<%= list.tips.last.photo %>);">
