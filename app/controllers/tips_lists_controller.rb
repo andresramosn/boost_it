@@ -8,21 +8,28 @@ class TipsListsController < ApplicationController
   end
 
   def create
-    #define tip +=> tip.findby name params
-    # if found = @tip
-    # if nil  @tip =  tip.create
-    @list_tip = ListTip.new
-    # (list_tip_params)
-    @list_tip.list = @list
-    @list_tip.tip = @tip
-    raise
-      if ListTip.create
-        redirect_to list_tips_list_path(list_id)
-      else
-        render :new
-    end
+    @tip = Tip.find_or_create_by(title: params[:tips_lists][:title])
+    @tip.address = params[:tips_lists][:address]
+    @tip.review = params[:tips_lists][:review]
+    @tip.category = params[:tips_lists][:category]
+    @tip.user = current_user
+    @tip.save!
+    @tip_list = ListTip.new
+    @tip_list.tip = @tip
+    @tip_list.list = List.find(params[:list_id])
+    @list = List.find(params[:list_id])
+    @tip_list.save!
+    redirect_to list_tips_list_path(@list, @tip_list)
   end
 
+  def show
+    # @list_tip = ListTip.geocoded # returns Tip with coordinates
+    @list_tip = ListTip.find(params[:id])
+    # @markers = [{
+      # lat: @list_tip.latitude,
+      # lng: @list_tip.longitude
+    # }]
+  end
 
 
 
