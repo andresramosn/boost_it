@@ -1,13 +1,30 @@
-.banner-home {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.35)), url("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?cs=srgb&dl=women-s-white-and-black-button-up-collared-shirt-774909.jpg&fm=jpg");
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100vw;
-}
+// .banner-home {
+//   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.35)), url("https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?cs=srgb&dl=women-s-white-and-black-button-up-collared-shirt-774909.jpg&fm=jpg");
+//   background-size: cover;
+//   background-position: center;
+//   height: 100vh;
+//   width: 100vw;
+// }
 
 .banner-home a {
   color: #ffffff;
   text-decoration: none;
   background-color: transparent;
 }
+
+.banner-home {
+  // background-color: #fd5f60;
+  // 2nd option
+  background-color: #D81E5B;
+  background-position: center;
+  height: 65vh;
+  width: 100vw;
+}
+
+// .banner-home p {
+//   font-size: 18px;
+//   font-family: Poppins;
+//   font-style: normal;
+//   font-weight: normal;
+//   color: white;
+// }

@@ -1,0 +1,65 @@
+
+.boost-section-home {
+  // background-color: #fd5f60;
+  // 2nd option
+  background-color: #4D9078;
+  background-position: center;
+  height: 40vh;
+  width: 100vw;
+
+  h2 {
+      font-size: 59px;
+      line-height: 59px;
+      font-weight: bold;
+      text-align: left;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.primera-section-home {
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.35)), url("https://images.pexels.com/photos/1848565/pexels-photo-1848565.jpeg?cs=srgb&dl=photo-of-woman-sitting-on-stairs-1848565.jpg&fm=jpg");
+  background-size: cover;
+  background-position: center;
+  height: 65vh;;
+  width: 100vw;
+
+  h2 {
+    font-size: 59px;
+    line-height: 59px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  a {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: transparent;
+  }
+}
+
+.customers-section-home {
+  // background-color: #fd5f60;
+  // 2nd option
+  background-color: #FFCD02;
+  background-position: center;
+  height: 40vh;
+  width: 100vw;
+
+  h2 {
+      font-size: 72px;
+      line-height: 59px;
+      font-weight: bold;
+      text-align: right;
+  }
+
+  p {
+    text-align: right;
+  }
+}
