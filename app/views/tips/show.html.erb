@@ -4,15 +4,6 @@
       <button id="toogle-map">Show map</button>
     </div>
       <p> <%= @tip.address %></p>
-    <div class="d-flex justify-content-between pb-2">
-      <div class= stars>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      <i class="far fa-star"></i>
-      </div>
-    </div>
   <div id="show-info" >
     <div class="d-flex py-2">
       <!-- missing make the avatar dynamic, we need to ask the user to update a picture for that -->
@@ -27,8 +18,7 @@
 
 
 <div id="location-div" class="d-none">
-  <h2> Location </h2>
-  <p1> <%= @tip.address %></p1>  <p>650 m from home</p>
+
     <!-- <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" > -->
     <div id="map"
       data-markers="<%= @markers.to_json %>"
