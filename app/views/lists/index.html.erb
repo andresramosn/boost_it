@@ -15,26 +15,21 @@
 
 <div class="web-container">
 
-<br>
-<h1>Your lists</h1>
+  <br>
+  <h1>Your Lists</h1>
 
-<p id="p-centered">Add new lists you can share with your guests</p>
-<div class="button-container">
-<%= link_to "New List", new_list_path, class:"add-button" %>
-</div>
+  <p id="p-centered">Add new lists you can share with your guests</p>
+    <div class="button-container">
+      <%= link_to "New List", new_list_path, class:"add-button" %>
+    </div>
 
-<div class="list-card">
-  <h2>All Tips</h2>
-    <% current_user.tips.each do |tip| %>
-    <h2><%= tip.title%></h2>
-      <% end %>
-</div>
+
+  <%= link_to tips_path do%>
     <div class="card-container">
-     <% @lists.each do |list| %>
-
-        <div class="list-card">
-          <h2> <%= list.name %> </h2>
+      <div class="list-card">
+         <h2>All Tips</h2>
         </div>
+
       <% list.tips.each do |tip| %>
     <%= tip.title%>
       <% end %>
@@ -44,8 +39,18 @@
 
 
       <% end %>
+
     </div>
+  <% end %>
 
-
+<% @lists.each do |list| %>
+ <%= link_to list_path(:id) do%>
+  <div class="card-container">
+    <div class="list-card">
+        <h2> <%= list.name %> </h2>
+    </div>
+  </div>
+      <% end %>
+  <%end%>
 
 </div>
