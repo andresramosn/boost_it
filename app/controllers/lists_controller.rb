@@ -1,8 +1,5 @@
 class ListsController < ApplicationController
 
-
-
-
   def new
     @list = List.new
   end
@@ -10,8 +7,8 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user = current_user
-    if @list.save!
-      redirect_to lists_path # redirecting to index
+    if @list.save
+      redirect_to list_path(@list) # redirecting to index
     else
       render :new
     end
@@ -33,7 +30,6 @@ class ListsController < ApplicationController
 
   def delete
   end
-
 
 private
 

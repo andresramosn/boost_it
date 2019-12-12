@@ -13,15 +13,14 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
     @tip.user = current_user
-    @list = List.find(params[:list_id])
-
     if @tip.save
-      TipsLists.create(tip_id: @tip.id, list_id: @list.id)
-      redirect_to lists_path # redirecting to lists
+      redirect_to tip_path(@tip) # redirecting to lists
     else
       render :new
     end
   end
+
+  # @list = List.find(params[:list_id])
 
   def index
     @tips = Tip.all
