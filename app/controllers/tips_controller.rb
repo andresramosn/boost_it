@@ -6,7 +6,7 @@ class TipsController < ApplicationController
   end
 
   def show
-    @tip = Tip.geocoded #returns Tip with coordinates
+    @tip = Tip.geocoded # returns Tip with coordinates
     @tip = Tip.find(params[:id])
     @markers = [{
       lat: @tip.latitude,
@@ -15,8 +15,12 @@ class TipsController < ApplicationController
   end
 
   def new
-    @tip = Tip.new
     @list = List.find(params[:list_id])
+      if list_id = nil
+        @tip = Tip.new
+      else
+        create
+      end
   end
 
   def create
@@ -30,6 +34,11 @@ class TipsController < ApplicationController
       render :new
     end
   end
+
+  # REvisar params if si hay lista
+  # if list create list recommendation
+  # if not just create tip
+
 
   def edit
   end
