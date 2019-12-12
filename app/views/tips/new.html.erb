@@ -3,7 +3,7 @@
 
       <%= simple_form_for(@tip) do |c| %> <!-- this is the action that tells the button submit where to -->
           <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
-          <%= c.input :category %>
+          <%= c.input :category, collection: Tip::CATEGORIES %>
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
