@@ -1,0 +1,6 @@
+<% @guests.each do |guest| %>
+<% if List.find(guest.list_id).user_id == current_user.id %>
+<%= User.find(guest.user_id).email %>
+<% end %>
+<%= share list %>
+<% end %>
