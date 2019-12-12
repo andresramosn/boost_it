@@ -19,7 +19,7 @@ class TipsListsController < ApplicationController
     @tip_list.list = List.find(params[:list_id])
     @list = List.find(params[:list_id])
     @tip_list.save!
-    redirect_to list_tips_list_path(@list, @tip_list)
+    redirect_to list_path(@list)
   end
 
   def show

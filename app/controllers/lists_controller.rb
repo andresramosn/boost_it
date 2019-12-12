@@ -20,6 +20,7 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @list_tips = ListTip.where(list_id: @list.id)
   end
 
   def edit
