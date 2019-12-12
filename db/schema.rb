@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 2019_12_11_124105) do
     t.string "last_name"
     t.string "photo"
     t.string "username"
+    t.string "invite_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

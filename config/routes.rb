@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "guests", to: "shares#invite_guest"
   get "guests/show", to: "shares#show"
   get "guests/share", to: "shares#share_list"
+  get "guests/invite/url", to: "shares#invite_url"
 
 
   resources :lists, only: [:index, :new, :create, :show] do
