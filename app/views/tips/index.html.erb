@@ -1,6 +1,39 @@
-<h1>Tips#index</h1>
-<p>Find me in app/views/tips/index.html.erb</p>
+<div class="web-container">
+  <h1>Your Tips</h1>
+  <p id="p-centered">Add your favourite places to the list.</p>
+    <div class="button-container">
+      <%= link_to "Add a tip", new_list_path, class:"add-button" %>
+    </div>
 
-<% @my_tips.each do |my_tip| %>
-<%=  my_tip.title %>
-<% end %>
+  <% @my_tips.each do |my_tip| %>
+    <div class="tips-index-links relative">
+      <%= link_to "", tip_path(my_tip), class:"absolute-0-0"%>
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
+          <h2 class="mb-2">
+          <%=  my_tip.title %>
+          </h2>
+          <p class="mb-2">Rating:
+          <%=  my_tip.rating %>
+          stars
+          </p>
+        </div>
+
+        <p>
+        <%=  my_tip.review[0, 83] %> ...
+        </p>
+
+        <div class="d-flex justify-content-center align-items-center" style="position: relative;">
+          <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" >
+          <btn class="pill-category-tips-index">
+            <%=  my_tip.category %>
+          </btn>
+        </div>
+
+        <p class="address-tips-index">
+        <%=  my_tip.address %>
+        </p>
+
+        <%=  my_tip.photo %>
+    </div>
+  <% end %>
+</div>
