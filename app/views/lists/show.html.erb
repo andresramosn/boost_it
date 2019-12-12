@@ -1,1 +1,9 @@
-La lista
+
+<h1>List#show</h1>
+
+
+<%= link_to "+add a tip", new_list_tips_list_path(@list) %>
+
+<% @list.tips.each do |tip| %>
+<%=  tip.title %>
+<% end %>
