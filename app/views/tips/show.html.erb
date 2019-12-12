@@ -16,12 +16,12 @@
   <div id="show-info">
     <h2>The best vasc restaurant in town</h2>
     <div class="d-flex pt-2 pb-2">
+      <!-- missing make the avatar dynamic, we need to ask the user to update a picture for that -->
       <img class="avatar-show-page" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
       <p>"<%= @tip.review %>"</p>
     </div>
-
-    <div class="d-flex justify-content-center align-items-center" style="position: relative;">
-      <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" >
+    <div class="d-flex justify-content-center align-items-center" id= "photo-show-page" style="position: relative;">
+      <%= cl_image_tag @tip.photo if @tip.photo.present? %>
       <btn class="pill-category"> <%= @tip.category %> </btn>
     </div>
   </div>
