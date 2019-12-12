@@ -1,2 +1,6 @@
 <h1>Tips#index</h1>
 <p>Find me in app/views/tips/index.html.erb</p>
+
+<% @my_tips.each do |my_tip| %>
+<%=  my_tip.title %>
+<% end %>
