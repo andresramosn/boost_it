@@ -1,13 +1,7 @@
 class ListsController < ApplicationController
 
 
-  def index
-    @lists = List.where(user_id: current_user.id)
-  end
 
-  def show
-     @list = List.find(params[:id])
-  end
 
   def new
     @list = List.new
@@ -21,6 +15,14 @@ class ListsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def index
+    @lists = List.where(user_id: current_user.id)
+  end
+
+  def show
+    @list = List.find(params[:id])
   end
 
   def edit
