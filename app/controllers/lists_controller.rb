@@ -1,14 +1,5 @@
 class ListsController < ApplicationController
 
-
-  def index
-    @lists = List.where(user_id: current_user.id)
-  end
-
-  def show
-     @list = List.find(params[:id])
-  end
-
   def new
     @list = List.new
   end
@@ -16,11 +7,19 @@ class ListsController < ApplicationController
   def create
     @list = List.new(list_params)
     @list.user = current_user
-    if @list.save!
-      redirect_to lists_path # redirecting to index
+    if @list.save
+      redirect_to list_path(@list) # redirecting to index
     else
       render :new
     end
+  end
+
+  def index
+    @lists = List.where(user_id: current_user.id)
+  end
+
+  def show
+    @list = List.find(params[:id])
   end
 
   def edit
@@ -31,7 +30,6 @@ class ListsController < ApplicationController
 
   def delete
   end
-
 
 private
 
