@@ -1,6 +1,10 @@
+<ul>Your guests
 <% @guests.each do |guest| %>
 <% if List.find(guest.list_id).user_id == current_user.id %>
-<%= User.find(guest.user_id).email %>
+<li><%= User.find(guest.user_id).email %>
+<%= link_to "share lists", guests_show_path({guest_user_id: guest.user_id}) %></li>
 <% end %>
-<%= share list %>
 <% end %>
+</ul>
+<%= link_to "add guest", guests_invite_path %>
+
