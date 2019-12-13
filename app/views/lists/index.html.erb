@@ -55,7 +55,7 @@
         <% end %>
         <div style="text-align: center;">
         <h2> <%= List.find(share.user_id).name %> </h2>
-        <p2> Shared by <%= User.find(share.user_id).first_name %> </p2>
+        <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
         </div>
         </div>
       </div>
