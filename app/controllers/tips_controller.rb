@@ -12,7 +12,6 @@ class TipsController < ApplicationController
 
   def create
     @tip = Tip.new(tip_params)
-    raise
     @tip.user = current_user
     if params[:list_id].present?
       @list = List.find(params[:list_id])
