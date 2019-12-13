@@ -7,7 +7,9 @@
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
-          <select name="lists" id="">
+          List <br>
+          <select name="lists" style="border-color: #CED4DA; background: white; width: 100%;">
+            <option></option>
             <% @lists.each do |list| %>
               <option value="<%= list %>"><%= list.capitalize %></option>
             <% end %>
