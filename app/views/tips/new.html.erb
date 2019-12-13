@@ -8,7 +8,6 @@
           <%= c.input :address %>
           <%= c.input :review %>
           <select name="lists" id="">
-              <option></option>
             <% @lists.each do |list| %>
               <option value="<%= list %>"><%= list.capitalize %></option>
             <% end %>

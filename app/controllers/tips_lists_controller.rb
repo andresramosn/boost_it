@@ -8,10 +8,10 @@ class TipsListsController < ApplicationController
   end
 
   def create
-    @tip = Tip.find_or_create_by(title: params[:tips_lists][:title])
-    @tip.address = params[:tips_lists][:address]
-    @tip.review = params[:tips_lists][:review]
-    @tip.category = params[:tips_lists][:category]
+    @tip = Tip.find_or_create_by(title: params[:tip][:title])
+    @tip.address = params[:tip][:address]
+    @tip.review = params[:tip][:review]
+    @tip.category = params[:tip][:category]
     @tip.user = current_user
     @tip.save!
     @tip_list = ListTip.new

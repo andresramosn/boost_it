@@ -1,6 +1,7 @@
 const previewImageOnFileSelect = () => {
   // we select the photo input
   const input = document.getElementById('photo-input');
+
   if (input) {
     // we add a listener to know when a new picture is uploaded
     input.addEventListener('change', () => {
