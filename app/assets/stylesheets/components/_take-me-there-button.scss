@@ -1,13 +1,21 @@
 .take-me-there-button {
-  border-radius: 30px;
-  color: white;
-  background-color: #9E005E;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
-  margin-bottom: 100px;
-  margin-top: 20px;
-  text-decoration: none;
+  border-radius: 45px;
+  color: black;
+  background-color: #ffffff;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 5px;
+  margin-bottom: 50px;
+  text-align: center;
   border: none;
+  text-decoration: none;
+  border: solid;
+  border-color: #9E005E;
+  border-width: 1px;
+  &:hover {
+    color: black;
+    background-color: #9e005e54;
+  }
 }
