@@ -1,5 +1,21 @@
-<h1>Share your lists with your new guest!</h1>
-<p>Hi <%=User.find(params[:id]).first_name %>,
+<div class="web-container">
+  <h1>Share your lists with your new guest!</h1>
+  <br>
+<div class="card-product">
+  <div class="card-product-infos">
+    <h2>Hi <%=User.find(params[:id]).first_name %>,</h2>
+    <p>
 I want to share with you my best tips from the city, in order to see them, just click in the following link:
-<%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url %></p>
+<%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url, class: "invite-link" %></p>
+  </div>
+</div>
 <%= link_to "back", guests_path %>
+</div>
+
+
+
+
+
+
+
+
