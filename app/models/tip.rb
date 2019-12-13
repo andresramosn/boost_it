@@ -4,7 +4,7 @@ class Tip < ApplicationRecord
   belongs_to :user
   has_many :list_tips
   mount_uploader :photo, PhotoUploader
-  CATEGORIES = ["Bar", "Art Gallery", "Bar", "Cafe", "Casino", "Museum", "Night Club", "Park", "Restaurant", "Attraction"]
+  CATEGORIES = ["Bar", "Art Gallery", "Cafe", "Casino", "Museum", "Night Club", "Park", "Restaurant", "Attraction"]
   validates :category, inclusion: { in: CATEGORIES }
 end
 
