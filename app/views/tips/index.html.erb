@@ -20,18 +20,16 @@
           stars
           </p>
         </div>
-          <p class="address-tips-index">
-          <%=  my_tip.address %>
-          </p>
-
+        <p>
+          <%=  my_tip.review[0, 83] %> ...
+        </p>
         <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
           <btn class="pill-category-tips-index">
             <%=  my_tip.category %>
           </btn>
         </div>
-
-    <p>
-        <%=  my_tip.review[0, 83] %> ...
+        <p class="address-tips-index mt-2">
+          <%=  my_tip.address %>
         </p>
   <% end %>
 </div>

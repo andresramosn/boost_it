@@ -7,7 +7,9 @@
 
 
   <% @list_tips.each do |list_tip| %>
+
   <%= link_to "", tip_path(list_tip.tip), class:"absolute-0-0"%>
+
     <div class="tips-index-links relative">
         <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
           <h2 class="mb-2">
@@ -23,9 +25,11 @@
         <%=  list_tip.tip.review[0, 83] %> ...
         </p>
 
-        <div class="d-flex justify-content-center align-items-center" style="position: relative;">
-          <img src="https://images.pexels.com/photos/1058277/pexels-photo-1058277.jpeg?cs=srgb&dl=bar-city-commerce-1058277.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" >
-          <btn class="pill-category-tips-index">
+
+
+        <div class="d-flex justify-content-center align-items-center" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list_tip.tip.photo if list_tip.tip.photo.present? %> ); height: 200px; background-size: cover">
+
+            <btn class="pill-category-tips-index">
             <%=  list_tip.tip.category %>
           </btn>
         </div>
@@ -34,7 +38,7 @@
         <%=  list_tip.tip.address %>
         </p>
 
-        <%=  list_tip.tip.photo %>
+
     </div>
   <% end %>
 </div>

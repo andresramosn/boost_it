@@ -7,8 +7,8 @@
           <%= c.input :title %>
           <%= c.input :address %>
           <%= c.input :review %>
-          <%= c.input :photo_cache, as: :hidden %>
           <%= c.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
+          <%= c.input :photo_cache, as: :hidden %>
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
 
           </div>
