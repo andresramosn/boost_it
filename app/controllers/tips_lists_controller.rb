@@ -12,6 +12,7 @@ class TipsListsController < ApplicationController
     @tip.address = params[:tip][:address]
     @tip.review = params[:tip][:review]
     @tip.category = params[:tip][:category]
+    @tip.photo = params[:tip][:photo]
     @tip.user = current_user
     @tip.save!
     @tip_list = ListTip.new
