@@ -13,9 +13,10 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
     @tip.user = current_user
-    if params[:list_id].present?
-      @list = List.find(params[:list_id])
+    list = List.find_by(name: params[:lists])
+    if params[:lists].present?
         if @tip.save
+          ListTip.create(tip_id: @tip.id, list_id: list.id)
           redirect_to tip_path(@tip) # redirecting to lists
         else
           render :new
@@ -55,6 +56,6 @@ class TipsController < ApplicationController
   private
 
   def tip_params
-    params.require(:tip).permit(:rating, :review, :category, :title, :address, :photo, :photo_cache)
+    params.require(:tip).permit(:rating, :review, :category, :title, :address, :photo, :photo_cache, :lists)
   end
 end
