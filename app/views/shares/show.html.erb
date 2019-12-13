@@ -1,6 +1,7 @@
-<h1>Share your lists with <%= @guest.email %></h1>
+<h1>Share your lists with <%= @guest.first_name %>!</h1>
 <ul>
 <% @lists.each do |list| %>
 <li><%= link_to list.name, guests_share_path({list_id: list.id, guest_user_id: @guest.id}) %></li>
 <% end %>
 </ul>
+<%= link_to "back", guests_path %>

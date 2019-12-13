@@ -41,6 +41,6 @@ class SharesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :first_name)
   end
 end

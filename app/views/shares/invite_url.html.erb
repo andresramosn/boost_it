@@ -1,5 +1,5 @@
 <h1>Share your lists with your new guest!</h1>
-<p>Hi <%=User.find(params[:id]).email %>,
+<p>Hi <%=User.find(params[:id]).first_name %>,
 I want to share with you my best tips from the city, in order to see them, just click in the following link:
 <%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url %></p>
 <%= link_to "back", guests_path %>

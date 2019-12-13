@@ -5,6 +5,7 @@
       <h2 class="text-center">Email of your guest</h2>
       <%= simple_form_for(@guest, url: guests_path(@guest), method: :post) do |c| %> <!-- this is the action that tells the button submit where to -->
         <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
+          <%= c.input :first_name %>
           <%= c.input :email %>
           <%= c.input "lists", as: :select, collection: current_user.lists.map(&:name)%>
          <!--  <div class="main-button"> -->
