@@ -16,7 +16,7 @@ class SharesController < ApplicationController
     end
     token = new_guest.raw_invitation_token
     if Rails.env.production?
-      new_guest.invite_url = "http://boostit.herokuapp.com:25/users/invitation/accept?invitation_token=#{token}"
+      new_guest.invite_url = "http://boostit.herokuapp.com/users/invitation/accept?invitation_token=#{token}"
     else
       new_guest.invite_url = "http://localhost:3000/users/invitation/accept?invitation_token=#{token}"
     end
