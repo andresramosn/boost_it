@@ -1,6 +1,17 @@
-<h1>Share your lists with <%= @guest.email %></h1>
-<ul>
-<% @lists.each do |list| %>
-<li><%= link_to list.name, guests_share_path({list_id: list.id, guest_user_id: @guest.id}) %></li>
-<% end %>
-</ul>
+<div class="web-container">
+  <p>link</p>
+    <h1>Share your lists with</h1>
+      <h2><img class="avatar-show-page" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" /><%= @guest.email %></h2>
+        <br>
+        <br>
+       <h2>Lists</h2>
+    <div class="card-container">
+      <div class="list-card">
+        <ul>
+          <% @lists.each do |list| %>
+            <h2><li><%= link_to list.name, guests_share_path({list_id: list.id, guest_user_id: @guest.id}) %></li></h2>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+</div>

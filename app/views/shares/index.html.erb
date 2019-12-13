@@ -1,10 +1,13 @@
-<ul>Your guests
-<% @guests.each do |guest| %>
-<% if List.find(guest.list_id).user_id == current_user.id %>
-<li><%= User.find(guest.user_id).email %>
-<%= link_to "share lists", guests_show_path({guest_user_id: guest.user_id}) %></li>
-<% end %>
-<% end %>
-</ul>
-<%= link_to "add guest", guests_invite_path %>
+  <div class="web-container">
+    <h1>Your guests</h1>>
+      <% @guests.each do |guest| %>
+        <% if List.find(guest.list_id).user_id == current_user.id %>
+         <li class= "avatar-show-page-1"><img class="avatar-show-page" alt="avatar-large" src="https://www.pngkey.com/png/full/230-2301779_best-classified-apps-default-user-profile.png" /><%= User.find(guest.user_id).email %>
+          <%= link_to "share lists", guests_show_path({guest_user_id: guest.user_id}) %></li>
+        <% end %>
+      <% end %>
 
+    <div class="button-container">
+      <%= link_to "add guest", guests_invite_path, class:"add-button" %>
+    </div>
+  </div>

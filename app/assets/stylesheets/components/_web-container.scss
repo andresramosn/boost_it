@@ -50,16 +50,17 @@
   font-weight: normal;
 }
 
-.web-container .address-tips-index {
-  margin-top: 14px;
-}
 
-.stars {
-      margin-left: 217px;
-}
 
 #show-info {
+
   p {
      margin-bottom: 0px;
   }
+}
+
+.web-container li {
+
+  text-decoration: none;
+  list-style-type: none;
 }
