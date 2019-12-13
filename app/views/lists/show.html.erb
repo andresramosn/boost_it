@@ -2,14 +2,15 @@
   <h1> <%= @list.name %> </h1>
   <p id="p-centered">Add your favourite places to the list.</p>
     <div class="button-container">
-      <%= link_to "Add a place", new_list_tips_list_path(@list), class:"add-button" %>
+      <%= link_to "Add a Tip", new_list_tips_list_path(@list), class:"add-button" %>
     </div>
 
 
   <% @list_tips.each do |list_tip| %>
 
+  <%= link_to "", tip_path(list_tip.tip), class:"absolute-0-0"%>
+
     <div class="tips-index-links relative">
-      <%= link_to "", tip_path(list_tip.tip), class:"absolute-0-0"%>
         <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
           <h2 class="mb-2">
           <%=  list_tip.tip.title %>

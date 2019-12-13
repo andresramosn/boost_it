@@ -5,7 +5,7 @@
   <p id="p-centered">Share your lists with your guests</p>
   <% guest_arr = [] %>
   <div class="button-container">
-    <%= link_to "add guest", guests_invite_path, class:"add-button" %>
+    <%= link_to "Add Guest", guests_invite_path, class:"add-button" %>
   </div>
     <% @guests.each do |guest| %>
      <%= link_to guests_show_path({guest_user_id: guest.user_id}) do%>
