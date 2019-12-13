@@ -1,13 +1,26 @@
-  <div class="web-container">
-    <h1>Your guests</h1>>
-      <% @guests.each do |guest| %>
-        <% if List.find(guest.list_id).user_id == current_user.id %>
-         <li class= "avatar-show-page-1"><img class="avatar-show-page" alt="avatar-large" src="https://www.pngkey.com/png/full/230-2301779_best-classified-apps-default-user-profile.png" /><%= User.find(guest.user_id).email %>
-          <%= link_to "share lists", guests_show_path({guest_user_id: guest.user_id}) %></li>
-        <% end %>
-      <% end %>
 
-    <div class="button-container">
-      <%= link_to "add guest", guests_invite_path, class:"add-button" %>
-    </div>
-  </div>
+<div class="web-container">
+<h1>Your Guests</h1>
+
+<p id="p-centered">Share your lists with your guests</p>
+<% guest_arr = [] %>
+<div class="button-container">
+<%= link_to "add guest", guests_invite_path, class:"add-button" %>
+</div>
+<% @guests.each do |guest| %>
+<%= link_to guests_show_path({guest_user_id: guest.user_id}) do%>
+<div class="card-container">
+<div class="list-card" style="height: 90px">
+<% if List.find(guest.list_id).user_id == current_user.id %>
+<% if guest_arr.exclude?(User.find(guest.user_id).email) %>
+<p style="text-align: center"><strong><%= "#{User.find(guest.user_id).first_name}"%></strong>
+<br><%="#{User.find(guest.user_id).email}" %></p>
+<% guest_arr << User.find(guest.user_id).email %>
+<% end %>
+<% end %>
+</div>
+<% end %>
+<% end %>
+</div>
+</div>
+

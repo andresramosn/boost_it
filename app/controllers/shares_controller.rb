@@ -7,11 +7,23 @@ class SharesController < ApplicationController
     @guest = User.new
   end
 
+  def invite_url
+  end
+
   def invite_guest
-    new_guest = User.invite!(user_params)
+    new_guest = User.invite!(user_params) do |u|
+      u.skip_invitation = true
+    end
+    token = new_guest.raw_invitation_token
+    if Rails.env.production?
+      new_guest.invite_url = "http://boostit.herokuapp.com/users/invitation/accept?invitation_token=#{token}"
+    else
+      new_guest.invite_url = "http://localhost:3000/users/invitation/accept?invitation_token=#{token}"
+    end
+    new_guest.save!
     share_list = List.find_by(name: params[:user][:lists])
     Share.create(user_id: new_guest.id, list_id: share_list.id)
-    redirect_to guests_path
+    redirect_to guests_invite_url_path({id: new_guest.id})
   end
 
   def share_list
@@ -29,6 +41,6 @@ class SharesController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email)
+    params.require(:user).permit(:email, :first_name)
   end
 end

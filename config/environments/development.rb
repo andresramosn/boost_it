@@ -34,8 +34,21 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   config.action_mailer.perform_caching = false
-
-
+  # additional
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.smtp_settings = {
+  #   # :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+  #   # :ssl => true,
+  #   :enable_starttls_auto => true,  #this is the important stuff!
+  #   :address        => 'smtp.opka.org',
+  #   :port           => 3000,
+  #   :domain         => 'opka.org',
+  #   :authentication => :plain,
+  #   :user_name      => 'jabraylen.dante@opka.org',
+  #   :password       => 'ngmdw6X&',
+  # }
 
 
   # Print deprecation notices to the Rails logger.
