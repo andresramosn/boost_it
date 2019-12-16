@@ -21,11 +21,11 @@
   <div class="button-container">
     <%= link_to "New List", new_list_path, class:"add-button" %>
   </div>
-
   <button id="user-lists">Lists</button>
    <button id="shared-lists">Shared</button>
 
   <div class="user-lists">
+
 
     <%= link_to tips_path do%>
     <div class="card-container">
@@ -48,27 +48,23 @@
         </div>
       </div>
       <% end %>
-    </div>
     <% end %>
-  </div>
-</div>
 
-<div class="shared-lists">
-  <h2>Shared list</h2>
-  <% @shares.each do |share| %>
-  <%= link_to list_path(List.find(share.list_id)) do%>
-
-  <div class="card-container">
-    <% if(List.find(share.list_id).tips.sample) %>
-    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= List.find(share.user_id).tips.last.photo %>);">
-      <% else %>
-      <div class="list-card">
-        <% end %>
-        <div style="text-align: center;">
-          <h2> <%= List.find(share.list_id).name %> </h2>
-          <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
-        </div>
+  <div class="shared-lists">
+    <% @shares.each do |share| %>
+    <%= link_to list_path(List.find(share.list_id)) do%>
+    <div class="card-container">
+      <% if(List.find(share.list_id).tips.sample) %>
+      <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= List.find(share.user_id).tips.last.photo %>);">
+        <% else %>
+        <div class="list-card">
+          <% end %>
+          <div style="text-align: center;">
+            <h2> <%= List.find(share.list_id).name %> </h2>
+            <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
+          </div>
       </div>
+      <% end %>
     </div>
     <% end %>
   </div>
