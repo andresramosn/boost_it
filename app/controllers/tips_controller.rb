@@ -33,6 +33,13 @@ class TipsController < ApplicationController
   def index
     @tips = Tip.all
     @my_tips = Tip.where(user_id: current_user.id)
+    @markers = @tips.map do |tip|
+      {
+        lat: tip.latitude,
+        lng: tip.longitude
+      }
+    end
+
   end
 
   def show
@@ -42,6 +49,7 @@ class TipsController < ApplicationController
       lat: @tip.latitude,
       lng: @tip.longitude
     }]
+
   end
 
   def edit
