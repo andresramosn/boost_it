@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   get 'tips_lists/create'
   devise_for :users
   root to: 'pages#home'
+get "/pricing", to: "pages#pricing", as: "pricing"
+
 
   get "guests", to: "shares#index"
   get "guests/invite", to: "shares#new_guest"
