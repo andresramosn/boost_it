@@ -21,8 +21,11 @@
   <div class="button-container">
     <%= link_to "New List", new_list_path, class:"add-button" %>
   </div>
+  <button id="user-lists">Lists</button>
+   <button id="shared-lists">Shared</button>
 
   <div class="user-lists">
+
 
     <%= link_to tips_path do%>
     <div class="card-container">
@@ -65,5 +68,7 @@
     </div>
     <% end %>
   </div>
+  <% end %>
+</div>
 </div>
 
