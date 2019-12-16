@@ -17,51 +17,57 @@
   <br>
   <h1>Your Lists</h1>
 
-  <p id="p-centered">Add new lists you can share with your guests</p>
-    <div class="button-container">
+    <p id="p-centered">Add new lists you can share with your guests</p>
+  <div class="button-container">
       <%= link_to "New List", new_list_path, class:"add-button" %>
-    </div>
-
-
-  <%= link_to tips_path do%>
-    <div class="card-container">
-      <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random?restaurant);">
-         <h2>All Tips</h2>
-        </div>
-    </div>
-  <% end %>
-
-  <% @lists.each do |list| %>
-    <%= link_to list_path(list.id) do%>
-      <div class="card-container">
-        <% if(list.tips.sample) %>
-          <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
-        <% else %>
-          <div class="list-card">
-        <% end %>
-        <h2> <%= list.name %> </h2>
-        </div>
-      </div>
-    <% end %>
-    <% end %>
-
-    <% @shares.each do |share| %>
-    <%= link_to list_path(List.find(share.user_id).id) do%>
-      <div class="card-container">
-        <% if(List.find(share.user_id).tips.sample) %>
-          <div class="list-card" style="background-image: url(<%= List.find(share.user_id).tips.last.photo %>);">
-        <% else %>
-          <div class="list-card">
-        <% end %>
-        <div style="text-align: center;">
-        <h2> <%= List.find(share.user_id).name %> </h2>
-        <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
-        </div>
-        </div>
-      </div>
-    <% end %>
-    <% end %>
   </div>
 
+    <div class="user-lists">
+
+      <%= link_to tips_path do%>
+      <div class="card-container">
+        <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random?restaurant);">
+             <h2>All Tips</h2>
+        </div>
+      </div>
+        <% end %>
+
+      <% @lists.each do |list| %>
+        <%= link_to list_path(list.id) do%>
+          <div class="card-container">
+            <% if(list.tips.sample) %>
+              <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+            <% else %>
+              <div class="list-card">
+            <% end %>
+            <h2> <%= list.name %> </h2>
+            </div>
+              </div>
+              <% end %>
+              <% end %>
+          </div>
+
+      </div>
+
+      <div class="shared-lists">
+
+        <% @shares.each do |share| %>
+        <%= link_to list_path(List.find(share.user_id).id) do%>
+        <div class="card-container">
+          <% if(List.find(share.user_id).tips.sample) %>
+            <div class="list-card" style="background-image: url(<%= List.find(share.user_id).tips.last.photo %>);">
+          <% else %>
+            <div class="list-card">
+          <% end %>
+              <div style="text-align: center;">
+                <h2> <%= List.find(share.user_id).name %> </h2>
+                <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
+              </div>
+            </div>
+            </div>
+              <% end %>
+              <% end %>
+        </div>
+      </div>
 </div>
 
