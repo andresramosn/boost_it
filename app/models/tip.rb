@@ -6,6 +6,7 @@ class Tip < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   CATEGORIES = ["Bar", "Art Gallery", "Cafe", "Casino", "Museum", "Night Club", "Park", "Restaurant", "Attraction"]
   validates :category, inclusion: { in: CATEGORIES }
+  COLORS = { "Bar": "turquoise", "Art Gallery": "pink", "Cafe": "beige", "Casino": "red", "Museum": "orange", "Night Club": "purple", "Park": "green", "Restaurant": "blue", "Attraction": "yellow" }
 end
 
-#update
+# update

@@ -23,6 +23,41 @@
   position: absolute;
   top: 10%;
   right: 4%;
+
+  &.blue {
+  background-color: blue;
+  }
+
+  &.turquoise {
+   background-color: #24ABA5;
+  }
+
+  &.pink{
+    background-color: #FF8BA7;
+  }
+
+  &.beige {
+    background-color: #E3B04B;
+  }
+  &.red {
+    background-color: #D1284B;
+  }
+  &.orange {
+    background-color: #FF971C;
+  }
+  &.purple {
+    background-color: #287CA0;
+  }
+  &.green {
+    background-color: #2C7873;
+  }
+  &.blue {
+    background-color: #4C80E4;
+  }
+  &.yellow {
+    background-color: #F6DA63;
+  }
 }
+
 
 
