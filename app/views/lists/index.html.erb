@@ -1,3 +1,4 @@
+
 <div class="settings">
   <%if user_signed_in? == true %>
   <li class="nav-item dropdown">
@@ -21,8 +22,10 @@
   <div class="button-container">
     <%= link_to "New List", new_list_path, class:"add-button" %>
   </div>
-  <button id="user-lists">Lists</button>
-   <button id="shared-lists">Shared</button>
+  <div class="d-flex">
+    <div class= "active tabs" id="user-lists">Lists</div>
+     <div id="shared-lists" class="tabs">Shared</div>
+  </div>
 
   <div class="user-lists">
 
