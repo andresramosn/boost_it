@@ -4,8 +4,8 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleMap } from '../plugins/toggle_map';
 import { previewImageOnFileSelect } from '../components/photo_preview';
-import { fetchPlaces } from '../plugins/google_places';
-
+import { fetchPlaces } from '../plugins/fetch_places';
+import { changeTabs } from '../components/tabs';
 
 initAutocomplete();
 
@@ -15,4 +15,7 @@ toggleMap();
 
 previewImageOnFileSelect();
 
-fetchPlaces();
+changeTabs();
+
+fetchPlaces(); // this one has to always be the last one (ask Mire)
+

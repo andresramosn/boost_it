@@ -22,7 +22,11 @@
         </div>
 
         <p>
+        <% if list_tip.tip.review.length <= 83 %>
+        <%=  list_tip.tip.review[0, 83] %>
+        <% else %>
         <%=  list_tip.tip.review[0, 83] %> ...
+        <% end %>
         </p>
 
 
