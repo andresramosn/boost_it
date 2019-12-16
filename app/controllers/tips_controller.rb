@@ -9,6 +9,9 @@ class TipsController < ApplicationController
   # See if list params is present
   # if list present create lists recommendations on form
   # if not just create tip without list
+  def all_tips
+    @tips = Tip.all
+  end
 
   def create
     @tip = Tip.new(tip_params)

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get "guests/show", to: "shares#show"
   get "guests/share", to: "shares#share_list"
   get "guests/invite/url", to: "shares#invite_url"
+  get "get_inspired", to: "tips#all_tips"
 
 
   resources :lists, only: [:index, :new, :create, :show] do
