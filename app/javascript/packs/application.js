@@ -15,4 +15,4 @@ toggleMap();
 
 previewImageOnFileSelect();
 
-fetchPlaces();
+// fetchPlaces();
