@@ -43,7 +43,6 @@
         <div class="list-card">
           <% end %>
           <h2> <%= list.name %> </h2>
-        </div>
       </div>
       <% end %>
     <% end %>
@@ -64,7 +63,6 @@
             <h2> <%= List.find(share.list_id).name %> </h2>
             <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
           </div>
-      </div>
       <% end %>
     </div>
     <% end %>
