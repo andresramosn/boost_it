@@ -18,6 +18,7 @@ gem 'devise'
 gem 'geocoder'
 gem 'devise_invitable', '~> 2.0.0'
 gem "algoliasearch-rails"
+gem 'google_places'
 
 
 gem 'dotenv-rails', groups: [:development, :test]

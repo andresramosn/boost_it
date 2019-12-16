@@ -4,6 +4,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initMapbox } from '../plugins/init_mapbox';
 import { toggleMap } from '../plugins/toggle_map';
 import { previewImageOnFileSelect } from '../components/photo_preview';
+import { fetchPlaces } from '../plugins/fetch_places';
 
 
 initAutocomplete();
@@ -13,3 +14,5 @@ initMapbox();
 toggleMap();
 
 previewImageOnFileSelect();
+
+fetchPlaces();

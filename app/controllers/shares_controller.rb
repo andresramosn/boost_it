@@ -22,6 +22,7 @@ class SharesController < ApplicationController
     end
     new_guest.save!
     share_list = List.find_by(name: params[:user][:lists])
+
     Share.create(user_id: new_guest.id, list_id: share_list.id)
     redirect_to guests_invite_url_path({id: new_guest.id})
   end
