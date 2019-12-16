@@ -7,7 +7,7 @@
     </a>
     <i id="toogle-map" class="fas fa-map-marked-alt"></i>
   </div>
-    <div class="d-flex justify-content-between align-items-center mb-3" >
+    <div class="d-flex justify-content-between align-items-center mb-1" >
       <h1 id="h1-show"> <%= @tip.title %></h1>
     </div>
       <p> <%= @tip.address %></p>
@@ -25,7 +25,6 @@
 
 
 <div id="location-div" class="d-none">
-
     <!-- <img src="https://images.pexels.com/photos/592753/pexels-photo-592753.jpeg?cs=srgb&dl=atlas-close-up-dark-dirty-592753.jpg&fm=jpg" alt="" height=100% width=100% style="border-radius: 8px;" > -->
     <div id="map"
       data-markers="<%= @markers.to_json %>"

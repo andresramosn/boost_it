@@ -21,7 +21,15 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @list_tips = ListTip.where(list_id: @list.id) #returns tips with coordinates
+    @markers = @list_tips.map do |list_tip|
+      {
+        lat: list_tip.tip.latitude,
+        lng: list_tip.tip.longitude
+      }
+    end
     @list_tips = ListTip.where(list_id: @list.id)
+
   end
 
   def edit
