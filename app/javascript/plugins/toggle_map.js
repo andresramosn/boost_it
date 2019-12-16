@@ -8,15 +8,15 @@ const toggleMap = () => {
   if (button) {
     button.addEventListener("click", (event) => {
       if (location.classList.contains("d-none")) {
-        button.innerHTML = "Show details"
         location.classList.remove("d-none")
         info.classList.add("d-none");
         // photo.classList.add("d-none");
       } else {
-        button.innerHTML = "Show map"
         location.classList.add("d-none")
         info.classList.remove("d-none");
       };
+      button.classList.toggle("fa-info-circle")
+      button.classList.toggle("fa-map-marked-alt")
     });
   };
 };
