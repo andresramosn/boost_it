@@ -16,8 +16,10 @@
           <p style="text-align: center;"><strong><%= "#{User.find(guest.user_id).first_name}"%></strong>
             <br><%="#{User.find(guest.user_id).email}" %></p>
             <% guest_arr << User.find(guest.user_id).email %>
-            <% end %>
         </div>
+
+            <% end %>
+
             <% end %>
           <% end %>
           <% end %>
