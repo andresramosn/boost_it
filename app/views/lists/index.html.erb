@@ -48,13 +48,13 @@
     <% @shares.each do |share| %>
     <%= link_to list_path(List.find(share.user_id).id) do%>
       <div class="card-container">
-        <% if(List.find(share.user_id).tips.sample) %>
+        <% if(List.find(share.list_id).tips.sample) %>
           <div class="list-card" style="background-image: url(<%= List.find(share.user_id).tips.last.photo %>);">
         <% else %>
           <div class="list-card">
         <% end %>
         <div style="text-align: center;">
-        <h2> <%= List.find(share.user_id).name %> </h2>
+        <h2> <%= List.find(share.list_id).name %> </h2>
         <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
         </div>
         </div>
