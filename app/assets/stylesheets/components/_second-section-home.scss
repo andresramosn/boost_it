@@ -44,7 +44,7 @@
   }
 
   a {
-  color: #ffffff;
+  color: white !important;
   text-decoration: none;
   background-color: transparent;
   font-size:22.5px;
@@ -54,7 +54,7 @@
 .customers-section-home {
   // background-color: #fd5f60;
   // 2nd option
-  background-color: #FFCD02;
+  background-color: #500955;
   background-position: center;
   height: 50vh;
   width: 100vw;
@@ -101,7 +101,7 @@
   }
 
   a {
-  color: #ffffff;
+  color: white !important;
   text-decoration: none;
   font-size: 22.5px;
   }
@@ -109,4 +109,10 @@
   #sign-in {
     font-size: 18px;
   }
+}
+
+.homepage-link {
+  color: white;
+   text-decoration: underline;
+
 }
