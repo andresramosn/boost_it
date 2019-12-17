@@ -1,5 +1,6 @@
-
-<div class="settings">
+<div class=top-container>
+  <h1 class="logotype">Boost-it</h1>
+  <div class="settings">
   <%if user_signed_in? == true %>
   <li class="nav-item dropdown">
     <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -11,6 +12,7 @@
       <% end %>
     </div>
   </li>
+</div>
 </div>
 
 <div class="web-container">
