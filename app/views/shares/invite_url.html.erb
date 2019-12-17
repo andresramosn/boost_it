@@ -1,15 +1,38 @@
 <div class="web-container">
-  <h1>Share your lists with your new guest!</h1>
-  <br>
-<div class="card-product">
-  <div class="card-product-infos">
-    <h2>Hi <%=User.find(params[:id]).first_name %>,</h2>
-    <p>
-I want to share with you my best tips from the city, in order to see them, just click in the following link:
-<%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url, class: "invite-link" %></p>
+  <div class="d-flex justify-content-between">
+    <a href="#">
+      <%= link_to guests_path do %>
+      <%= image_tag "back.png", :style => "width: 5%"%>
+      <% end %>
+    </a>
   </div>
-</div>
-<%= link_to "back", guests_path %>
+  <h1>Share your lists with <%=User.find(params[:id]).first_name %></h1>
+  <p>Copy paste the link below and share it with your guest.</p>
+  <br>
+  <h2>Share your list</h2>
+  <div class="share-module d-flex">
+    <div class="link-to-share" style="font-size: 18px;">
+      <%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url, class: "invite-link", id: "my-input" %>
+    </div>
+
+
+    <div class="copy-link-button" id="copy-link-button">
+      <button>Copy</button>
+    </div>
+  </div>
+  <input type="text" value="<%= User.find(params[:id]).invite_url %>" id="my-input-dos">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="card-product">
+    <div class="card-product-infos">
+      <h2>Hi <%=User.find(params[:id]).first_name %>,</h2>
+      <p> I want to share with you my best tips from the city, in order to see them, just click in the following link:
+      <%= link_to "#{User.find(params[:id]).invite_url}", User.find(params[:id]).invite_url, class: "invite-link" %></p>
+    </div>
+  </div>
 </div>
 
 
