@@ -58,7 +58,7 @@
 
   <div class="shared-lists">
     <% if (@shares.empty?) %>
-      <p>You don't have any shared list</p>
+      <p>You don't have any shared lists</p>
     <% else %>
         <% @shares.each do |share| %>
           <%= link_to list_path(List.find(share.list_id)) do%>
