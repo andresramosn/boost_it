@@ -9,6 +9,9 @@ class TipsController < ApplicationController
   # See if list params is present
   # if list present create lists recommendations on form
   # if not just create tip without list
+  def all_tips
+    @tips = Tip.all
+  end
 
   def create
     @tip = Tip.new(tip_params)
@@ -33,6 +36,13 @@ class TipsController < ApplicationController
   def index
     @tips = Tip.all
     @my_tips = Tip.where(user_id: current_user.id)
+    @markers = @tips.map do |tip|
+      {
+        lat: tip.latitude,
+        lng: tip.longitude
+      }
+    end
+
   end
 
   def show
@@ -42,6 +52,7 @@ class TipsController < ApplicationController
       lat: @tip.latitude,
       lng: @tip.longitude
     }]
+
   end
 
   def edit

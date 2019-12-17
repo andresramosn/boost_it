@@ -11,7 +11,7 @@
   <% @my_tips.each do |my_tip| %>
     <div class="tips-index-links relative">
       <%= link_to "", tip_path(my_tip), class:"absolute-0-0"%>
-        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
+        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-1">
           <h2 class="mb-2">
           <%=  my_tip.title %>
           </h2>
@@ -20,18 +20,26 @@
           stars
           </p>
         </div>
-        <p>
+        <p class="list-card-review">
           <%=  my_tip.review[0, 83] %> ...
         </p>
+
         <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
           <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
+
             <%= my_tip.category %>
           </btn>
         </div>
-        <p class="address-tips-index mt-2">
+        <p class="address-tips-index mt-2" style="font-size: 18px">
           <%=  my_tip.address %>
         </p>
   <% end %>
-
+    </div>
+  <div id="location-div">
+    <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 </div>
 
