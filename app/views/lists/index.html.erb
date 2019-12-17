@@ -24,11 +24,12 @@
   </div>
   <br>
   <div class="d-flex justify-content-center">
-    <div class= "active tabs" id="user-lists">Lists</div>
+    <div class= "active tabs" id="all-tips">All tips</div>
+    <div class ="tabs" id="user-lists">Lists</div>
      <div id="shared-lists" class="tabs">Shared</div>
   </div>
 
-  <div class="user-lists">
+  <div class="all-tips">
 
 
     <%= link_to tips_path do%>
@@ -38,7 +39,9 @@
         </div>
       </div>
     <% end %>
+  </div>
 
+<div class="user-lists">
     <% @lists.each do |list| %>
       <%= link_to list_path(list.id) do%>
         <div class="card-container">
