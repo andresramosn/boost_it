@@ -6,6 +6,7 @@ import { toggleMap } from '../plugins/toggle_map';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { changeTabs } from '../components/tabs';
 import {autocomplete} from '../components/autocomplete';
+import {ajaxTitle} from '../components/ajax_place';
 
 initAutocomplete();
 
@@ -16,6 +17,8 @@ toggleMap();
 previewImageOnFileSelect();
 
 changeTabs();
+
+ajaxTitle();
 
 
 

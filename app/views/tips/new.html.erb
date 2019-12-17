@@ -17,9 +17,6 @@
           <%= c.input :photo_cache, as: :hidden %>
           <%= c.input :photo, input_html: { class: 'd-none', id: 'photo-input'}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
           <%= image_tag "", width: 300, class: "hidden", id: "photo-preview" %>
-
-<input type="text" id="flat_address">
-
           </div>
           <div class="form-actions">
           <%= c.button :submit,  "Save", class: "form-button" %>

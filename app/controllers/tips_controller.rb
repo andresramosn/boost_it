@@ -3,9 +3,16 @@ class TipsController < ApplicationController
   def new
     @tip = Tip.new
     @client = GooglePlaces::Client.new(ENV["GOOGLE_API"])
-    @spot = @client.spots_by_query('Naked Pizza Miami')
+
     @lists = current_user.lists.map { |instance| instance.name } # esta convirtiendo las instances en nada mas el nombre, con el fin de usarlos en el form select
     # (&:name)
+    respond_to do |format|
+      format.js {
+        @place = params.keys.first
+        @spot = @client.spots_by_query(@place).first
+      }
+      format.html
+    end
   end
 
   # See if list params is present
