@@ -2,7 +2,7 @@ class TipsController < ApplicationController
 
   def new
     @tip = Tip.new
-    @client = GooglePlaces::Client.new("AIzaSyAR8evcYOlDFKJ8H0Oymag5FVhfS-Ubky4")
+    @client = GooglePlaces::Client.new(ENV["GOOGLE_API"])
     @spot = @client.spots_by_query('Naked Pizza Miami')
     @lists = current_user.lists.map { |instance| instance.name } # esta convirtiendo las instances en nada mas el nombre, con el fin de usarlos en el form select
     # (&:name)
