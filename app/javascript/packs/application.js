@@ -7,6 +7,7 @@ import { previewImageOnFileSelect } from '../components/photo_preview';
 import { changeTabs } from '../components/tabs';
 import { toggleMapList } from '../plugins/toggle_map_list';
 import { toggleMapAllTips } from '../plugins/toggle_map_all_tips';
+import { copyToClipboard } from '../plugins/copy_to_clipboard';
 
 initAutocomplete();
 
@@ -22,5 +23,4 @@ previewImageOnFileSelect();
 
 changeTabs();
 
-
-
+copyToClipboard();
