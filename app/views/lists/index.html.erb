@@ -1,42 +1,41 @@
 
-<div class="settings">
-  <%if user_signed_in? == true %>
-  <li class="nav-item dropdown">
-    <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-      <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-      <% else %>
-      <%=  %>
-      <% end %>
-    </div>
-  </li>
-</div>
-
 <div class="web-container">
+  <div class="d-flex justify-content-between">
+    <a href="#">
+      </a>
+      <a href="/lists">
+      <img style="width: 5%" src="/assets/back-92df092edb92b2b62cf096adbcb398b4078729a27bf48d9ee375eb82eb2e4e3a.png">
+</a>
+  <div class="settings" style="margin-top: 0px;">
+    <%if user_signed_in? == true %>
+      <li class="nav-item dropdown">
+        <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+               <% else %>
+            <% end %>
+          </div>
+      </li>
+  </div>
+  </div>
 
-  <br>
   <h1>Your Lists</h1>
-
-  <p id="p-centered">Add new lists you can share with your guests</p>
-  <div class="button-container">
-    <%= link_to "New List", new_list_path, class:"add-button" %>
-  </div>
-  <br>
-  <div class="d-flex justify-content-center">
-    <div class ="active tabs" id="user-lists">Lists</div>
-     <div id="shared-lists" class="tabs">Shared</div>
-  </div>
-
+    <p id="p-centered">Add new lists to share with your guests</p>
+      <div class="button-container">
+        <%= link_to "New List", new_list_path, class:"add-button" %>
+      </div>
+          <div class="d-flex justify-content-center">
+            <div class ="active tabs" id="user-lists">Lists</div>
+              <div id="shared-lists" class="tabs">Shared</div>
+          </div>
 
   <div class="user-lists">
-
     <%= link_to tips_path do%>
       <div class="card-container">
         <div class="list-card" id="list-card" style="height:125px; margin-top: 28px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.8), rgba(90, 1, 54, 0.8)), url(https://source.unsplash.com/random?restaurant);">
           <h2>All Tips</h2>
         </div>
-
       </div>
     <% end %>
 
