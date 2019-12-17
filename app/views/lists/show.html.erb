@@ -13,7 +13,7 @@
       <%= link_to "Add a Tip", new_list_tips_list_path(@list), class:"add-button" %>
     </div>
   <% @list_tips.each do |list_tip| %>
-    <div class="tips-index-links relative">
+    <div class="tips-index-links relative" id="lists-show-index-cards">
       <%= link_to "", tip_path(list_tip.tip), class:"absolute-0-0"%>
         <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
           <h2 class="mb-2">
@@ -42,7 +42,7 @@
     </div>
   <% end %>
 
-  <div id="location-div-lists-show">
+  <div id="location-div-lists-show" class="d-none">
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">

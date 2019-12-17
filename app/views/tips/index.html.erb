@@ -8,42 +8,42 @@
     <i id="toogle-map-all-tips-index" class="fas fa-map-marked-alt"></i>
   </div>
   <div>
-    <h1>Your Tips</h1>
+    <h1>All your Tips</h1>
   </div>
   <p id="p-centered">Add your favourite places to the list.</p>
-    <div class="button-container">
+  <div class="button-container">
       <%= link_to "Add a Tip", new_tip_path, class:"add-button" %>
-    </div>
-
-
-  <% @my_tips.each do |my_tip| %>
-    <div class="tips-index-links relative">
-      <%= link_to "", tip_path(my_tip), class:"absolute-0-0"%>
-        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-1">
-          <h2 class="mb-2">
-          <%=  my_tip.title %>
-          </h2>
-          <p class="mb-2">Rating:
-          <%=  my_tip.rating %>
-          stars
+  </div>
+  <div id="all-tips-index-cards">
+    <% @my_tips.each do |my_tip| %>
+      <div class="tips-index-links relative">
+        <%= link_to "", tip_path(my_tip), class:"absolute-0-0"%>
+          <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-1">
+            <h2 class="mb-2">
+            <%=  my_tip.title %>
+            </h2>
+            <p class="mb-2">Rating:
+            <%=  my_tip.rating %>
+            stars
+            </p>
+          </div>
+          <p class="list-card-review">
+            <%=  my_tip.review[0, 83] %> ...
           </p>
-        </div>
-        <p class="list-card-review">
-          <%=  my_tip.review[0, 83] %> ...
-        </p>
 
-        <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
-          <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
+          <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
+            <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
 
-            <%= my_tip.category %>
-          </btn>
-        </div>
-        <p class="address-tips-index mt-2" style="font-size: 16px">
-          <%=  my_tip.address %>
-        </p>
-  <% end %>
-    </div>
-  <div id="location-div-all-tips-index">
+              <%= my_tip.category %>
+            </btn>
+          </div>
+          <p class="address-tips-index mt-2" style="font-size: 16px">
+            <%=  my_tip.address %>
+          </p>
+      </div>
+    <% end %>
+  </div>
+  <div id="location-div-all-tips-index" class="d-none">
     <div id="map"
       data-markers="<%= @markers.to_json %>"
       data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
