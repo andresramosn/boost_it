@@ -5,3 +5,11 @@ title.value = '<%= @spot.name %>'
 
 var address = document.querySelector("#tip_address")
 address.value = '<%= @spot.formatted_address %>'
+
+var price_level = document.querySelector("#tip_price_level")
+console.log(price_level, '<%= @spot.price_level %>')
+price_level.value = '<%= @spot.price_level %>'
+
+
+
+
