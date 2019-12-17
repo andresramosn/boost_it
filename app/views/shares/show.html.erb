@@ -4,7 +4,7 @@
   <% @lists.each do |list| %>
   <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id}) do%>
     <div class="card-container">
-      <div class="list-card" style="height: 90px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+      <div class="list-card" >
       <% if Share.where(list_id: list.id).map(&:user_id).include?(@guest.id)  %>
       <p style="text-align: center"><strong><%= "#{list.name}"%></strong>  (shared)
       <% else %>
