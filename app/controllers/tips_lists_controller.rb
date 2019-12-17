@@ -60,7 +60,7 @@ class TipsListsController < ApplicationController
   #     private
 
   # def list_tip_params
-  #   params.require(:tip_list).permit(:rating, :review, :category, :title, :address)
+  #   params.require(:tip).permit(:rating, :review, :category, :title, :address, :photo, :photo_cache, :lists)
   # end
 
   end

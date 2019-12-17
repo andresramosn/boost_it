@@ -1,4 +1,7 @@
 console.log('<%= @spot %>')
 
+var title = document.querySelector("#tip_title")
+title.value = '<%= @spot.name %>'
+
 var address = document.querySelector("#tip_address")
 address.value = '<%= @spot.formatted_address %>'

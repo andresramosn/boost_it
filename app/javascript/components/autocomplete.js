@@ -1,7 +1,7 @@
 import GMaps from 'gmaps/gmaps.js';
 function autocomplete() {
   document.addEventListener("DOMContentLoaded", function() {
-    var flatAddress = document.querySelector("#tip_title");
+    var flatAddress = document.querySelector(".google-autocomplete");
     if (flatAddress) {
       var autocomplete = new google.maps.places.Autocomplete(flatAddress, { types: [ 'establishment' ] });
       google.maps.event.addDomListener(flatAddress, 'keydown', function(e) {
