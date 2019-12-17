@@ -1,0 +1,10 @@
+.top-container{
+    display: flex;
+    align-items: center;
+}
+
+.top-container > div
+{
+    margin: 0 15px;
+    flex: 0 0 auto;
+}
