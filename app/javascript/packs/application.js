@@ -17,5 +17,5 @@ previewImageOnFileSelect();
 
 changeTabs();
 
-// fetchPlaces(); // this one has to always be the last one (ask Mire)
+
 
