@@ -7,7 +7,11 @@
         <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
           <%= c.input :first_name %>
           <%= c.input :email %>
-          <%= c.input "lists", as: :select, collection: current_user.lists.map(&:name)%>
+          <% counter = 1 %>
+          <% current_user.lists.each do |list| %>
+          <input type="checkbox" name="lists_id[]" id="<%= list.id %>" value="<%= list.id %>"> <%= list.name %> <br>
+          <% counter +=1 %>
+          <% end %>
          <!--  <div class="main-button"> -->
           <%= c.button :submit, "Save", class: "form-button" %>
         </div>

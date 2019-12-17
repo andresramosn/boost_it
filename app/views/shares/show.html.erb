@@ -1,18 +1,44 @@
 <div class="web-container">
-  <h1>Share your lists with</h1>
-  <h1><%= @guest.first_name %>!</h1>
-  <% @lists.each do |list| %>
-  <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id}) do%>
-    <div class="card-container">
-      <div class="list-card" >
-      <% if Share.where(list_id: list.id).map(&:user_id).include?(@guest.id)  %>
-      <p style="text-align: center"><strong><%= "#{list.name}"%></strong>  (shared)
-      <% else %>
-      <p style="text-align: center"><strong><%= "#{list.name}"%></strong>
+<<<<<<< HEAD
+  <div class="d-flex">
+    <a href="#">
+      <%= link_to guests_path do %>
+      <%= image_tag "back.png", :style => "width: 5%"%>
       <% end %>
-      </div>
-      <% end %>
-    </div>
+    </a>
+  </div>
+
+  <h1>Shared with <%= @guest.first_name %></h1>
+
+  <%# count lists and tips for guest%>
+  <div>
+  <h2>Number of lists shared: <%= @guest_lists %></h2>
+  <h2>Total tips shared: <%= @guest_tips %></h2>
+  </div>
+
+
+  <% if @unshared_lists.length != 0 %>
+    <br>
+    <p>Share an additional list?</p>
   <% end %>
-  <%= link_to "back", guests_path %>
+
+  <% @unshared_lists.each do |list| %>
+      <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id, path: "add"}) do%>
+  <div class="card-container">
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+      <p style="text-align: center"><%= "#{list.name}"%>
+    </div>
+  </div>
+      <% end %>
+
+    <% end %>
+  <br>
+  <p>Shared lists</p>
+  <% @shared_lists.each do |list| %>
+  <div class="card-container">
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+      <p style="text-align: center"><%= "#{list.name}"%>
+    </div>
+  </div>
+    <% end %>
 </div>
