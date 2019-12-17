@@ -21,9 +21,9 @@ class SharesController < ApplicationController
       new_guest.invite_url = "http://localhost:3000/users/invitation/accept?invitation_token=#{token}"
     end
     new_guest.save!
-    share_list = List.find_by(name: params[:user][:lists])
-
-    Share.create(user_id: new_guest.id, list_id: share_list.id)
+    params[:lists_id].each do |list_id|
+      Share.create(user_id: new_guest.id, list_id: list_id)
+    end
     redirect_to guests_invite_url_path({id: new_guest.id})
   end
 
