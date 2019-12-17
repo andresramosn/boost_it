@@ -5,8 +5,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { toggleMap } from '../plugins/toggle_map';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { changeTabs } from '../components/tabs';
+import {autocomplete} from '../components/autocomplete';
+import {ajaxTitle} from '../components/ajax_place';
 import { toggleMapList } from '../plugins/toggle_map_list';
 import { toggleMapAllTips } from '../plugins/toggle_map_all_tips';
+
 
 initAutocomplete();
 
@@ -21,6 +24,9 @@ toggleMapList();
 previewImageOnFileSelect();
 
 changeTabs();
+
+ajaxTitle();
+
 
 
 
