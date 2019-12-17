@@ -1,5 +1,6 @@
-
-<div class="settings">
+<div class=top-container>
+  <h1 class="logotype">Boost-it</h1>
+  <div class="settings">
   <%if user_signed_in? == true %>
   <li class="nav-item dropdown">
     <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -11,6 +12,7 @@
       <% end %>
     </div>
   </li>
+</div>
 </div>
 
 <div class="web-container">
@@ -24,18 +26,19 @@
   </div>
   <br>
   <div class="d-flex justify-content-center">
-    <div class= "active tabs" id="user-lists">Lists</div>
+    <div class ="active tabs" id="user-lists">Lists</div>
      <div id="shared-lists" class="tabs">Shared</div>
   </div>
 
-  <div class="user-lists">
 
+  <div class="user-lists">
 
     <%= link_to tips_path do%>
       <div class="card-container">
-        <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/random?restaurant);">
+        <div class="list-card" id="list-card" style="height:125px; margin-top: 28px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.8), rgba(90, 1, 54, 0.8)), url(https://source.unsplash.com/random?restaurant);">
           <h2>All Tips</h2>
         </div>
+
       </div>
     <% end %>
 
@@ -57,26 +60,30 @@
   </div>
 
   <div class="shared-lists">
-    <% @shares.each do |share| %>
-      <%= link_to list_path(List.find(share.list_id)) do%>
-        <div class="card-container">
-          <% if(share.list.tips.first) %>
-            <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= List.find(share.list_id).tips.last.photo %>);">
-              <div style="text-align: center;">
-                <h2> <%= share.list.name %> </h2>
-                <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
-              </div>
-            </div>
-          <% else %>
-            <div class="list-card">
-              <div style="text-align: center;">
-                <h2> <%= share.list.name %> </h2>
-                <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
-              </div>
+    <% if (@shares.empty?) %>
+      <p>You don't have any shared lists</p>
+    <% else %>
+        <% @shares.each do |share| %>
+          <%= link_to list_path(List.find(share.list_id)) do%>
+            <div class="card-container">
+              <% if(share.list.tips.first) %>
+                <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= List.find(share.list_id).tips.last.photo %>);">
+                  <div style="text-align: center;">
+                    <h2> <%= share.list.name %> </h2>
+                    <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
+                  </div>
+                </div>
+              <% else %>
+                <div class="list-card">
+                  <div style="text-align: center;">
+                    <h2> <%= share.list.name %> </h2>
+                    <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>
+                  </div>
+                </div>
+              <% end %>
             </div>
           <% end %>
-        </div>
-      <% end %>
+        <% end %>
     <% end %>
   </div>
 </div>

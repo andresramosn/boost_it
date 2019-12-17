@@ -2,8 +2,17 @@ class TipsController < ApplicationController
 
   def new
     @tip = Tip.new
+    @client = GooglePlaces::Client.new(ENV["GOOGLE_API"])
+
     @lists = current_user.lists.map { |instance| instance.name } # esta convirtiendo las instances en nada mas el nombre, con el fin de usarlos en el form select
     # (&:name)
+    respond_to do |format|
+      format.js {
+        @place = params.keys.first
+        @spot = @client.spots_by_query(@place).first
+      }
+      format.html
+    end
   end
 
   # See if list params is present
@@ -11,6 +20,12 @@ class TipsController < ApplicationController
   # if not just create tip without list
   def all_tips
     @tips = Tip.all
+  end
+
+  def add_to_list
+    @tip = Tip.new
+    @old_tip = Tip.find(params[:format])
+    @lists = current_user.lists.map { |instance| instance.name }
   end
 
   def create
