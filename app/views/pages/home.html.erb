@@ -13,8 +13,11 @@
   <div class="home-container">
     <h2>Share experiences</h2>
     <p>
-      Share curated list of local tips to boost your guest experience. Start Sharing.
-    </p>
+      Share curated list of local tips to boost your guest experience.
+      <br>
+      <br>
+      <%= link_to "Start Sharing", lists_path, class:"homepage-link"   %>
+</p>
   </div>
 </div>
 
@@ -22,20 +25,24 @@
   <div class="home-container">
     <h2>Delight customers</h2>
     <p>
-      Boost your guest's satisfaction by offering them a taylor made experience. Learn More.
-    </p>
+      Boost your guest's satisfaction <br> by offering them a taylor made experience.
+      <br>
+      <br>
+      <%= link_to "Learn More", lists_path, class:"homepage-link"  %>
+      </p>
+
   </div>
 </div>
 
 <div class="last-section-home">
   <div class="home-container">
     <h2>Boost your guest experience</h2>
-    <button class="main-button-home-last" ><%= link_to "Start Now", lists_path  %></button>
+    <button class="main-button-home-last" ><%= link_to "Start Now", lists_path %></button>
     <br>
     <br>
     <br>
-    <p>Already have an account? </p>
-      <%= link_to "Sign in", new_user_session_path %>
+    <p>Already have an account? <br>
+      <%= link_to "Sign in", new_user_session_path, class:"homepage-link" %></p>
   </div>
 </div>
 
