@@ -22,6 +22,12 @@ class TipsController < ApplicationController
     @tips = Tip.all
   end
 
+  def add_to_list
+    @tip = Tip.new
+    @old_tip = Tip.find(params[:format])
+    @lists = current_user.lists.map { |instance| instance.name }
+  end
+
   def create
     @tip = Tip.new(tip_params)
     @tip.user = current_user
