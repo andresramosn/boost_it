@@ -5,7 +5,8 @@
   background: white;
   width: 100%;
   overflow: hidden;
-  box-shadow: inset 0 -2px 6px 6px white, inset 0 2px 2px 1px #000000;
+  border-top: solid;
+  border-width: medium;
   z-index: 1;
 }
 
