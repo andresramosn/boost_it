@@ -5,6 +5,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { toggleMap } from '../plugins/toggle_map';
 import { previewImageOnFileSelect } from '../components/photo_preview';
 import { changeTabs } from '../components/tabs';
+import {autocomplete} from '../components/autocomplete';
 
 initAutocomplete();
 
@@ -15,6 +16,7 @@ toggleMap();
 previewImageOnFileSelect();
 
 changeTabs();
+
 
 
 
