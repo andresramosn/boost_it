@@ -1,18 +1,18 @@
 <div class="web-container">
-<h1>Share your lists with</h1>
-<h1><%= @guest.first_name %>!</h1>
-<% @lists.each do |list| %>
-<%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id}) do%>
-<div class="card-container">
-<div class="list-card" style="height: 90px">
-<% if Share.where(list_id: list.id).map(&:user_id).include?(@guest.id)  %>
-<p style="text-align: center"><strong><%= "#{list.name}"%></strong>  (shared)
-<% else %>
-<p style="text-align: center"><strong><%= "#{list.name}"%></strong>
-<% end %>
-</div>
-<% end %>
-</div>
-<% end %>
-<%= link_to "back", guests_path %>
+  <h1>Share your lists with</h1>
+  <h1><%= @guest.first_name %>!</h1>
+  <% @lists.each do |list| %>
+  <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id}) do%>
+    <div class="card-container">
+      <div class="list-card" style="height: 90px">
+      <% if Share.where(list_id: list.id).map(&:user_id).include?(@guest.id)  %>
+      <p style="text-align: center"><strong><%= "#{list.name}"%></strong>  (shared)
+      <% else %>
+      <p style="text-align: center"><strong><%= "#{list.name}"%></strong>
+      <% end %>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to "back", guests_path %>
 </div>
