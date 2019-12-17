@@ -24,24 +24,22 @@
   </div>
   <br>
   <div class="d-flex justify-content-center">
-    <div class= "active tabs" id="all-tips">All tips</div>
-    <div class ="tabs" id="user-lists">Lists</div>
+    <div class ="active tabs" id="user-lists">Lists</div>
      <div id="shared-lists" class="tabs">Shared</div>
   </div>
 
-  <div class="all-tips">
 
+  <div class="user-lists">
 
     <%= link_to tips_path do%>
       <div class="card-container">
-        <div class="list-card" style="height:47px; margin-top: 28px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.8), rgba(90, 1, 54, 0.8)), url(https://source.unsplash.com/random?restaurant);">
+        <div class="list-card" id="list-card" style="height:125px; margin-top: 28px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.8), rgba(90, 1, 54, 0.8)), url(https://source.unsplash.com/random?restaurant);">
           <h2>All Tips</h2>
         </div>
+
       </div>
     <% end %>
-  </div>
 
-<div class="user-lists">
     <% @lists.each do |list| %>
       <%= link_to list_path(list.id) do%>
         <div class="card-container">
