@@ -1,20 +1,22 @@
-<div class=top-container>
-  <h1 class="logotype">Boost-it</h1>
-    <div class="settings" style="margin-top: 0px;">
-      <%if user_signed_in? == true %>
-        <li class="nav-item dropdown">
-          <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-               <% else %>
-              <% end %>
-            </div>
-        </li>
-    </div>
-</div>
-
 <div class="web-container">
+
+  <div class="d-flex justify-content-between">
+    <h1 class="logotype">Boost-it</h1>
+      <div class="settings" style="margin-top: 0px;">
+        <%if user_signed_in? == true %>
+          <li class="nav-item dropdown">
+            <%= image_tag "settings.png", class: "settings dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                <%= link_to "Edit Profile", edit_user_registration_path, class: "dropdown-item" %>
+                  <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                 <% else %>
+                <% end %>
+              </div>
+          </li>
+      </div>
+  </div>
+
+
   <h1>Welcome <%=current_user.first_name%></h1> <br>
     <p id="p-centered">Add new lists to share with your guests</p>
       <div class="button-container">
