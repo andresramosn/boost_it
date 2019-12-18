@@ -1,12 +1,12 @@
 <div class="show-container">
   <div class="d-flex justify-content-between">
     <a href="#">
-      <%= link_to tips_path do %>
-      <%= image_tag "back.png", :style => "width: 5%"%>
+      <%= link_to tips_path do %><i class="fas fa-chevron-left" style="margin-left: -172px; color: black; font-size: 1.3rem;"></i>
       <% end %>
     </a>
-    <i id="toogle-map" class="fas fa-map-marked-alt"></i>
+    <i id="toogle-map-all-tips-index" class="fas fa-map-marked-alt" style="color: black; margin-top: 2px;"></i>
   </div>
+    <br>
     <div class="d-flex justify-content-between align-items-center mb-1" >
       <h1 id="h1-show"> <%= @tip.title %></h1>
     </div>
@@ -18,7 +18,7 @@
     </div>
   <div id="show-info" >
     <div class="d-flex justify-content-end align-items-center" id= "photo-show-page" style="position: relative;">
-      <div style="border-radius: 5px;"><%= cl_image_tag @tip.photo if @tip.photo.present? %></div>
+      <%= cl_image_tag @tip.photo if @tip.photo.present? %>
       <btn class="pill-category-show"> <%= @tip.category %> </btn>
     </div>
   </div>
