@@ -1,7 +1,8 @@
 <div class="web-container">
   <div>
-    <h1>Get inspired</h1>
-    <p id="p-centered">Find tips from other hosts</p>
+    <h1>Get Inspired</h1>
+    <br>
+    <p id="p-centered">Add tips from other users to your lists.</p>
   </div>
 
   <% @tips.each do |tip| %>
@@ -13,19 +14,19 @@
           </h2>
         </div>
         <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tip.photo %>); height: 200px; margin-top: 0px;">
-            <btn class="pill-category-tips-index <%= Tip::COLORS[tip.category.to_sym] %>">
+          <btn class="pill-category-tips-index <%= Tip::COLORS[tip.category.to_sym] %>">
             <%= tip.category %>
           </btn>
           <div style="display: flex; justify-content: space-between; position: absolute; left: 0; bottom: 0; width: 100%; padding-right: 20px; padding-left: 20px;">
-          <p>By: <%= User.find(tip.user_id).first_name %></p>
-         <p id="plus"> <%= link_to "", get_inspired_new_path(tip), class:"fas fa-plus"%></p>
+            <p>By: <%= User.find(tip.user_id).first_name %></p>
+            <p id="plus"> <%= link_to "", get_inspired_new_path(tip), class:"fas fa-plus"%></p>
           </div>
         </div>
         <p class="address-tips-index mt-2" style="font-size: 16px">
           <%=  tip.address %>
         </p>
   <% end %>
-</div>
+    </div>
 </div>
 
 
