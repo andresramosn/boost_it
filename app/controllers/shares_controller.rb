@@ -11,20 +11,25 @@ class SharesController < ApplicationController
   end
 
   def invite_guest
+    # skip auto-mailer from devise
     new_guest = User.invite!(user_params) do |u|
       u.skip_invitation = true
     end
     token = new_guest.raw_invitation_token
+    # adding devise invite token as instance attribute, for every environment
     if Rails.env.production?
       new_guest.invite_url = "http://boostit.herokuapp.com/users/invitation/accept?invitation_token=#{token}"
     else
       new_guest.invite_url = "http://localhost:3000/users/invitation/accept?invitation_token=#{token}"
     end
     new_guest.save!
+    # create a share instance (list and user)
     params[:lists_id].each do |list_id|
       Share.create(user_id: new_guest.id, list_id: list_id)
     end
-    redirect_to guests_invite_url_path({id: new_guest.id})
+    # calling mailer method welcome to create view and deliver e-mail
+    UserMailer.with(user: new_guest).welcome.deliver_now
+    redirect_to guests_invite_url_path(id: new_guest.id)
   end
 
   def share_list
