@@ -1,7 +1,29 @@
 class SharesController < ApplicationController
   def index
     @guests = Share.all
+    @guests_filtered = []
+    @lists = current_user.lists
+    @guests_lists_count = []
+
+    @guests.each do |guest|
+      if List.find(guest.list_id).user_id == current_user.id
+        if @guests_filtered.exclude?(guest.user_id)
+          @guests_filtered << guest.user_id
+        end
+      end
+    end
+
+    @guests_filtered.each do |g_id|
+      guest_lists = []
+      User.find(g_id).shares.map(&:list_id).each do |list|
+        if List.find(list).user_id == current_user.id
+          guest_lists << list
+        end
+      end
+    @guests_lists_count << guest_lists.length
+    end
   end
+
 
   def new_guest
     @guest = User.new

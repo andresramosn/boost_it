@@ -1,31 +1,29 @@
 <div class="web-container">
   <h1>Your Guests</h1> <br>
   <p id="p-centered">Share your lists with your guests</p>
-  <% guest_arr = [] %>
   <div class="button-container">
     <%= link_to "ADD GUEST", guests_invite_path, class:"add-button" %>
   </div>
-
   <div class="user-lists">
-    <% @guests.each do |guest| %>
-      <%= link_to guests_show_path({guest_user_id: guest.user_id}) do%>
-        <% if List.find(guest.list_id).user_id == current_user.id %>
-          <% if guest_arr.exclude?(User.find(guest.user_id).email) %>
-            <div class="guest-card d-flex justify-content-between" style="
-    margin-bottom: 15px;">
-              <div class="name-mail-date">
-                <p class="guest-name" style="text-align: left; font-size: 22px;"><strong><%= "#{User.find(guest.user_id).first_name}"%></strong></p>
-                <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest.user_id).email}" %></p>
-                  <% guest_arr << User.find(guest.user_id).email %>
-                <p class="guest-since" style="font-size: 16px;">Guest since <%= "#{User.find(guest.user_id).created_at}"%></p>
-              </div>
-              <div class="lists-shared">
-                <p class="number-of-lists" style="text-align: center;">12</p>
-                <p style="text-align: center; font-size: 14px;">lists shared</p>
-              </div>
-            </div>
-          <% end %>
-        <% end %>
+    <% counter = 0 %>
+    <% @guests_filtered.each do |guest| %>
+      <%= link_to guests_show_path({guest_user_id: guest}) do%>
+        <div class="guest-card d-flex justify-content-between" style="margin-bottom: 15px;">
+          <div class="name-mail-date">
+            <p class="guest-name" style="text-align: left; font-size: 22px;"><strong><%= "#{User.find(guest).first_name}"%></strong></p>
+            <% if User.find(guest).email.length <= 20   %>
+              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email}" %></p>
+              <% else %>
+              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email[0, 20]}" %>...</p>
+            <% end %>
+            <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest).created_at}").strftime("%d/%m/%Y")%></p>
+          </div>
+          <div class="lists-shared">
+            <p class="number-of-lists" style="text-align: center; font-size: 22px;"><%=@guests_lists_count[counter] %></p>
+            <% counter += 1 %>
+            <p style="text-align: center; font-size: 16px;">lists shared</p>
+          </div>
+        </div>
       <% end %>
     <% end %>
   </div>
