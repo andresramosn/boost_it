@@ -8,11 +8,12 @@
     <i id="toogle-map-all-tips-index" class="fas fa-map-marked-alt" style="color: #ABA9AC; margin-top: 2px;"></i>
   </div>
   <div>
-    <h1>All your Tips</h1>
+    <h1>Your Tips</h1>
+    <br>
   </div>
-  <p id="p-centered">Add your favourite places to the list.</p>
+  <p id="p-centered">Add your favourite places.</p>
   <div class="button-container">
-    <%= link_to "Add a Tip", new_tip_path, class:"add-button" %>
+    <%= link_to "Create Tip", new_tip_path, class:"add-button" %>
   </div>
   <div id="all-tips-index-cards">
     <% @my_tips.each do |my_tip| %>
