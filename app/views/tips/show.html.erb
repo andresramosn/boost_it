@@ -17,7 +17,7 @@
       <p>"<%= @tip.review %>"</p>
     </div>
   <div id="show-info" >
-    <div class="d-flex justify-content-end align-items-center" id= "photo-show-page" style="position: relative;">
+    <div class="d-flex justify-content-end align-items-center" id= "photo-show-page" style="position: relative; border-radius: 5px;">
       <%= cl_image_tag @tip.photo if @tip.photo.present? %>
       <btn class="pill-category-show"> <%= @tip.category %> </btn>
     </div>
