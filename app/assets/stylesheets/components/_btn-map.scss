@@ -19,7 +19,7 @@
 
 
 #toogle-map-all-tips-index {
-  background-color: #ffffff;
+
   border-radius: 12px;
   font-size: 14px;
   height: 24px;
@@ -31,9 +31,20 @@
   padding-top: 0px;
   padding-bottom: 12px;
   // border-width: .5px;
-  margin-top: 8px;
+  margin-top: 0px;
   font-size: 20px;
   color: #9e005e8c;
+  font-color: white;
+
+  a{
+    color: white;
+  text-align: center;
+  padding: inherit;
+  padding-bottom: 0px;
+  margin-bottom: 45px;
+  margin-top: 30px;
+  font-size: 12px;
+  }
 }
 
 #toogle-map-lists-show {
@@ -46,7 +57,7 @@
   // border: solid;
   border-color: #000000;
   align-items: center;
-  padding-top: 0px;
+  padding-top: -5px;
   padding-bottom: 12px;
   // border-width: .5px;
   margin-top: 8px;
