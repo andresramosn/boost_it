@@ -12,7 +12,7 @@
   </div>
   <p id="p-centered">Add your favourite places to the list.</p>
   <div class="button-container">
-      <%= link_to "Add a Tip", new_tip_path, class:"add-button" %>
+    <%= link_to "Add a Tip", new_tip_path, class:"add-button" %>
   </div>
   <div id="all-tips-index-cards">
     <% @my_tips.each do |my_tip| %>
@@ -26,7 +26,6 @@
           <p class="list-card-review">
             <%=  my_tip.review[0, 83] %> ...
           </p>
-
           <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
             <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
 
