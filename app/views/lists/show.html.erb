@@ -2,33 +2,38 @@
   <div class="d-flex justify-content-between">
     <a href="#">
       <%= link_to lists_path do %>
-      <%= image_tag "back.png", :style => "width: 5%"%>
+        <%= image_tag "back.png", :style => "width: 5%"%>
       <% end %>
     </a>
     <i id="toogle-map-lists-show" class="fas fa-map-marked-alt" style="color: #ABA9AC; margin-top: 2px;"></i>
   </div>
   <h1> <%= @list.name %> </h1>
   <p id="p-centered">Add your favourite places to the list</p>
-    <div class="button-container">
-      <%= link_to "Add a Tip", new_list_tips_list_path(@list), class:"add-button" %>
-    </div>
+  <div class="button-container">
+    <%= link_to "Add a Tip", new_list_tips_list_path(@list), class:"add-button" %>
+  </div>
   <% @list_tips.each do |list_tip| %>
     <div class="tips-index-links relative" id="lists-show-index-cards">
       <%= link_to "", tip_path(list_tip.tip), class:"absolute-0-0"%>
-        <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
-          <h2 class="mb-2">
-          <%=  list_tip.tip.title %>
-          </h2>
+        <div class="d-flex align-items-center">
+          <img class="avatar-show-page" alt="avatar-large" src="https://avatars2.githubusercontent.com/u/55089715?v=4" />
+          <div class="title-desc">
+            <div class="d-flex justify-content-between align-items-center mt-3 pt-3 mb-2">
+              <h2 class="mb-2">
+                <%=  list_tip.tip.title %>
+              </h2>
+            </div>
+            <p>
+              <% if list_tip.tip.review.length <= 83 %>
+                <%=  list_tip.tip.review[0, 83] %>
+              <% else %>
+                <%=  list_tip.tip.review[0, 83] %> ...
+              <% end %>
+            </p>
+          </div>
         </div>
-        <p>
-          <% if list_tip.tip.review.length <= 83 %>
-          <%=  list_tip.tip.review[0, 83] %>
-          <% else %>
-          <%=  list_tip.tip.review[0, 83] %> ...
-          <% end %>
-        </p>
         <div class="d-flex justify-content-center align-items-center" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list_tip.tip.photo if list_tip.tip.photo.present? %> ); height: 200px; background-size: cover; border-radius: 5px;">
-            <btn class="pill-category-tips-index <%= Tip::COLORS[list_tip.tip.category.to_sym] %>">
+          <btn class="pill-category-tips-index <%= Tip::COLORS[list_tip.tip.category.to_sym] %>">
             <%=  list_tip.tip.category %>
           </btn>
         </div>
