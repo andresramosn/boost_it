@@ -15,9 +15,13 @@
     margin-bottom: 15px;">
               <div class="name-mail-date">
                 <p class="guest-name" style="text-align: left; font-size: 22px;"><strong><%= "#{User.find(guest.user_id).first_name}"%></strong></p>
+                <% if User.find(guest.user_id).email.length <= 20   %>
                 <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest.user_id).email}" %></p>
+                  <% else %>
+                    <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest.user_id).email[0, 20]}" %>...</p>
+                <% end %>
                   <% guest_arr << User.find(guest.user_id).email %>
-                <p class="guest-since" style="font-size: 16px;">Guest since <%= "#{User.find(guest.user_id).created_at}"%></p>
+                <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest.user_id).created_at}").strftime("%d/%m/%Y")%></p>
               </div>
               <div class="lists-shared">
                 <p class="number-of-lists" style="text-align: center;">12</p>
