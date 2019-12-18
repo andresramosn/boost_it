@@ -33,12 +33,12 @@ class TipsController < ApplicationController
     @tip.user = current_user
     list = List.find_by(name: params[:lists])
     if params[:lists].present?
-        if @tip.save
-          ListTip.create(tip_id: @tip.id, list_id: list.id)
+      if @tip.save
+        ListTip.create(tip_id: @tip.id, list_id: list.id)
           redirect_to tip_path(@tip) # redirecting to lists
-        else
-          render :new
-        end
+      else
+        render :new
+      end
     else
       if @tip.save
         redirect_to tip_path(@tip) # redirecting to lists
