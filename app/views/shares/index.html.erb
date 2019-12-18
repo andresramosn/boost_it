@@ -1,10 +1,9 @@
-
 <div class="web-container">
-  <h1>Your Guests</h1>
+  <h1>Your Guests</h1> <br>
   <p id="p-centered">Share your lists with your guests</p>
   <% guest_arr = [] %>
   <div class="button-container">
-    <%= link_to "Add Guest", guests_invite_path, class:"add-button" %>
+    <%= link_to "ADD GUEST", guests_invite_path, class:"add-button" %>
   </div>
 
   <div class="user-lists">
@@ -21,8 +20,8 @@
                 <p class="guest-since" style="font-size: 16px;">Guest since <%= "#{User.find(guest.user_id).created_at}"%></p>
               </div>
               <div class="lists-shared">
-                  <p class="number-of-lists" style="text-align: center;">12</p>
-                  <p style="text-align: center; font-size: 14px;">lists shared</p>
+                <p class="number-of-lists" style="text-align: center;">12</p>
+                <p style="text-align: center; font-size: 14px;">lists shared</p>
               </div>
             </div>
           <% end %>
