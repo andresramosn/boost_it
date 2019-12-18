@@ -10,6 +10,20 @@ var price_level = document.querySelector("#tip_price_level")
 console.log(price_level, '<%= @spot.price_level %>')
 price_level.value = '<%= @spot.price_level %>'
 
+// console.log('<%= @spot.photos[0].photo_reference %>')
 
 
+// fetch(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${'<%= @spot.photos[0].photo_reference %>'}&key=ENV[GOOGLE_BROWSE]`)
+//   .then(response => response.json())
+//   .then((data) => {
+//   console.log(data);})
+
+
+
+
+
+
+
+// need to pull photo reference from api
+// insert photo_reference into the fetch request
 
