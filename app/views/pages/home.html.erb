@@ -3,9 +3,9 @@
     <h1>Boost-it</h1>
     <h2>Get better reviews</h2>
     <p>
-      Boost your guest's satisfaction by offering them a delighting experience.
+      Boost your guest's satisfaction <br> by offering them a delighting experience.
     </p>
-    <button class="main-button-home" ><%= link_to "Start Now", lists_path  %></button>
+    <button class="main-button-home" ><%= link_to "START NOW", lists_path  %></button>
   </div>
 </div>
 
@@ -35,12 +35,14 @@
 
 <div class="last-section-home">
   <div class="home-container">
-    <h2>Boost your guest experience</h2>
-    <button class="main-button-home-last" ><%= link_to "Start Now", lists_path %></button>
-    <br>
-    <br>
-    <br>
-    <p>Already have an account? <br>
-      <%= link_to "Sign in", new_user_session_path, class:"homepage-link" %></p>
+    <h2>Boost your experience</h2>
+      <button class="main-button-home-last" ><%= link_to "START NOW", lists_path %></button>
+      <br>
+      <p>Already have an account? <br>
+        <%= link_to "Sign in", new_user_session_path, class:"sign-in" %></p>
   </div>
+</div>
+
+<div class="home-footer">
+  <h1>Boost-it</h1>
 </div>

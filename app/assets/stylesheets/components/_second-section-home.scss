@@ -47,7 +47,7 @@
   color: white !important;
   text-decoration: none;
   background-color: transparent;
-  font-size:22.5px;
+  font-size:18px;
   }
 }
 
@@ -81,7 +81,7 @@
   // 2nd option
   background-color: #D81E5B;
   background-position: center;
-  height: 70vh;
+  height: 55vh;
   width: 100vw;
   padding-top: 15px;
 
@@ -102,17 +102,31 @@
 
   a {
   color: white !important;
-  text-decoration: none;
-  font-size: 22.5px;
+  font-size: 18px;
   }
 
-  #sign-in {
-    font-size: 18px;
+  .sign-in {
+    font-size: 22px;
+    text-decoration: underline;
   }
 }
 
 .homepage-link {
   color: white;
-   text-decoration: underline;
+  text-decoration: underline;
 
+}
+
+.home-footer {
+  background: black;
+  width: 100%;
+  border-top: solid;
+  height: 45px;
+
+h1 {
+  font-size: 22px;
+  color: white;
+  font-family: Futura;
+  margin: 5px 18px;
+  }
 }
