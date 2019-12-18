@@ -8,9 +8,10 @@
     <i id="toogle-map-lists-show" class="fas fa-map-marked-alt" style="color: #ABA9AC; margin-top: 2px;"></i>
   </div>
   <h1> <%= @list.name %> </h1>
+  <br>
   <p id="p-centered">Add your favourite places to the list</p>
   <div class="button-container">
-    <%= link_to "Add a Tip", new_list_tips_list_path(@list), class:"add-button" %>
+    <%= link_to "CREATE TIP", new_list_tips_list_path(@list), class:"add-button" %>
   </div>
   <% @list_tips.each do |list_tip| %>
     <div class="tips-index-links relative" id="lists-show-index-cards">
