@@ -2,7 +2,7 @@
   <h2 class="text-center">Add Tip</h2>
     <%= simple_form_for(@tip) do |c| %> <!-- this is the action that tells the button submit where to -->
       <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
-        <%= c.input :title, input_html: {value: @old_tip.title} %>
+        <%= c.input :title, input_html: {value: @old_tip.title}, label: 'Place' %>
         <%= c.input :address, input_html: {value: @old_tip.address} %>
         <%= c.input :review, label: 'Your personal recomendation' %>
         <%= c.input :price_level, as: :hidden, input_html: {value: @old_tip.price_level} %>
