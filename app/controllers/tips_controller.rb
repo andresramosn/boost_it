@@ -19,7 +19,12 @@ class TipsController < ApplicationController
   # if list present create lists recommendations on form
   # if not just create tip without list
   def all_tips
-    @tips = Tip.all
+    if params[:filter] == nil
+      @tips = Tip.all
+    else
+      @tips = Tip.where(category: params[:filter])
+    end
+
   end
 
   def add_to_list

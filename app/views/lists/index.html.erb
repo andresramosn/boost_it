@@ -20,18 +20,18 @@
     <div class="title and subtitle">
       <h1>Welcome <%=current_user.first_name%></h1>
       <br>
-        <p id="p-centered">Add new lists to share with your guests</p>
+      <p id="p-centered">Add new lists to share with your guests</p>
+    </div>
+    <div class="button-container">
+      <%= link_to "NEW LIST", new_list_path, class:"add-button" %>
+    </div>
+    <br>
+    <div class="d-flex justify-content-center">
+      <div class ="active tabs" id="user-lists">Your Lists
       </div>
-        <div class="button-container">
-          <%= link_to "NEW LIST", new_list_path, class:"add-button" %>
-        </div>
-        <br>
-        <div class="d-flex justify-content-center">
-          <div class ="active tabs" id="user-lists">Your Lists
-          </div>
-          <div id="shared-lists" class="tabs">Shared
-          </div>
-        </div>
+      <div id="shared-lists" class="tabs">Shared
+      </div>
+    </div>
 
   <div class="user-lists">
     <%= link_to tips_path do%>
