@@ -60,12 +60,12 @@ class TipsController < ApplicationController
       if params[:lists].present?
         if @tip.save
           ListTip.create(tip_id: @tip.id, list_id: list.id)
-            redirect_to get_inspired_path # redirecting to lists
+            redirect_to get_inspired_path({tip: @tip.id, list: params[:lists]}) # redirecting to lists
         else
         end
       else
         if @tip.save
-          redirect_to get_inspired_path # redirecting to lists
+          redirect_to get_inspired_path(tip: @tip.id) # redirecting to lists
         else
         end
       end
