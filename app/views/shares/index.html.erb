@@ -14,7 +14,9 @@
             <% if User.find(guest).email.length <= 20   %>
               <p class="guest-mail" style="font-size: 16px;"><%="#{User.find(guest).email}" %></p>
               <% else %>
-              <p class="guest-mail" style="font-size: 16px;"><%="#{User.find(guest).email[0, 15]}" %>...</p>
+
+              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email[0, 16]}" %>...</p>
+
             <% end %>
             <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest).created_at}").strftime("%d/%m/%Y")%></p>
           </div>
@@ -22,7 +24,12 @@
           <div class="lists-shared">
             <p class="number-of-lists" style="text-align: center; font-size: 22px;"><%=@guests_lists_count[counter] %></p>
             <% counter += 1 %>
-            <p style="text-align: center; font-size: 16px;">lists shared</p>
+
+            <% if  counter == 1 %>
+            <p style="text-align: center; font-size: 16px;"> lists shared </p>
+            <% else %>
+            <p style="text-align: center; font-size: 16px;"> list shared</p>
+            <% end %>
           </div>
 
             <p style="padding-top: 20px; padding-left: 21px;">></p>
