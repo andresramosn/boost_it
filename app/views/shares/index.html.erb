@@ -8,7 +8,7 @@
     <% counter = 0 %>
     <% @guests_filtered.each do |guest| %>
       <%= link_to guests_show_path({guest_user_id: guest}) do%>
-        <div class="guest-card d-flex justify-content-between" style="margin-bottom: 15px;">
+        <div class="guest-card d-flex justify-content-between" style="margin-bottom: 15px;" style="margin-bottom: 15px;">
           <div class="name-mail-date">
             <p class="guest-name" style="text-align: left; font-size: 22px;"><strong><%= "#{User.find(guest).first_name}"%></strong></p>
             <% if User.find(guest).email.length <= 20   %>
@@ -22,6 +22,9 @@
             <p class="number-of-lists" style="text-align: center; font-size: 22px;"><%=@guests_lists_count[counter] %></p>
             <% counter += 1 %>
             <p style="text-align: center; font-size: 16px;">lists shared</p>
+          </div>
+          <div>
+            <p>></p>
           </div>
         </div>
       <% end %>
