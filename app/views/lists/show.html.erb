@@ -1,10 +1,8 @@
 <div class="web-container">
   <div class="d-flex justify-content-between">
-    <a href="#">
-      <%= link_to lists_path do %>
-        <i class="fas fa-chevron-left" style="margin-left: -172px; color: black; font-size: 1.3rem;"></i>
-      <% end %>
-    </a>
+    <%= link_to lists_path do %>
+      <i class="fas fa-chevron-left" style="color: black; font-size: 1.3rem;"></i>
+    <% end %>
     <i id="toogle-map-lists-show" class="fas fa-map-marked-alt" style="color: black; margin-top: 2px;"></i>
   </div>
   <h1> <%= @list.name %> </h1>
