@@ -1,4 +1,5 @@
 <div class="web-container">
+  <br>
   <h2 class="text-center">Create Tip</h2>
     <%= simple_form_for(@tip) do |c| %> <!-- this is the action that tells the button submit where to -->
       <div class="form-inputs col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto form p-4">
@@ -6,10 +7,10 @@
         <input type= "text" class= "google-autocomplete" placeholder="Enter the place you wish to add"></input>
         <%= c.input :title, as: :hidden %>
         <%= c.input :address %>
+        <%= c.input :category, label: 'Choose a category', collection: Tip::CATEGORIES %>
         <%= c.input :review, label: 'Your personal recomendation' %>
         <%= c.input :price_level, as: :hidden %>
         <%= c.input :google_pic, as: :hidden %>
-        <%= c.input :category, label: 'Choose a category', collection: Tip::CATEGORIES %>
         List <br>
         <select name="lists" style="border-color: #CED4DA; background: white; width: 100%; padding: 7px; margin-bottom: 10px;">
           <option></option>
