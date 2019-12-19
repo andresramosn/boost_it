@@ -25,9 +25,12 @@
             <%=  my_tip.title %>
             </h2>
           </div>
-          <p class="list-card-review">
-            <%=  my_tip.review[0, 83] %> ...
-          </p>
+          <div class="d-flex" style="margin-bottom: 12px;">
+            <img class="avatar-show-page" alt="avatar-large" style="margin-top: 12px;"src="https://avatars2.githubusercontent.com/u/55089715?v=4" />
+            <p class="list-card-review">
+              <%=  my_tip.review[0, 83] %> ...
+            </p>
+          </div>
           <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
             <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
 
