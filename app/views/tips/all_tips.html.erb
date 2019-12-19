@@ -1,4 +1,14 @@
 <div class="web-container">
+
+<% if  params[:tip].present?%>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span> <strong>Congrats!</strong> <%= Tip.find(params[:tip]).title%> has been added to your <%= params[:list]%> list!</span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>
+
   <div class="title and subtitle">
     <h1 style="padding-top: 45px;">Get Inspired</h1>
     <br>
