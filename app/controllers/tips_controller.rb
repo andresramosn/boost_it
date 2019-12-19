@@ -10,6 +10,7 @@ class TipsController < ApplicationController
       format.js {
         @place = params.keys.first
         @spot = @client.spots_by_query(@place).first
+        @photo_url = @spot.photos[0].fetch_url(400)
       }
       format.html
     end
@@ -62,7 +63,6 @@ class TipsController < ApplicationController
         lng: tip.longitude
       }
     end
-
   end
 
   def show
@@ -72,7 +72,6 @@ class TipsController < ApplicationController
       lat: @tip.latitude,
       lng: @tip.longitude
     }]
-
   end
 
   def edit
@@ -87,6 +86,6 @@ class TipsController < ApplicationController
   private
 
   def tip_params
-    params.require(:tip).permit(:rating, :review, :category, :title, :address, :photo, :photo_cache, :lists, :opening_hours, :price_level, :website)
+    params.require(:tip).permit(:rating, :review, :category, :title, :address, :photo, :photo_cache, :lists, :opening_hours, :price_level, :website, :google_pic)
   end
 end
