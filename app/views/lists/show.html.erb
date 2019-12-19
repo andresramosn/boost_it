@@ -34,7 +34,12 @@
             </p>
           </div>
         </div>
-        <div class="d-flex justify-content-center align-items-center" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path list_tip.tip.photo if list_tip.tip.photo.present? %> ); height: 200px; background-size: cover; border-radius: 5px;">
+        <div class="d-flex justify-content-center align-items-center" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
+          <% if list_tip.tip.photo.present? %>
+            <%= cl_image_path list_tip.tip.photo %>
+          <% else %>
+            <%= cl_image_path list_tip.tip.google_pic %>
+          <%end%>); height: 200px; background-size: cover; border-radius: 5px;">
           <btn class="pill-category-tips-index <%= Tip::COLORS[list_tip.tip.category.to_sym] %>">
             <%=  list_tip.tip.category %>
           </btn>

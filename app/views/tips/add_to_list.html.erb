@@ -17,7 +17,11 @@
         </select>
         <%#= c.input :photo_cache,  as: :hidden %>
         <%#= c.input :photo, input_html: { class: 'd-none', id: 'photo-input', file: @old_tip.photo}, label_html: { class: 'upload-photo'}, label: '📷 Upload a photo' %>
-        <%= cl_image_tag @old_tip.photo, width: 300, id: "photo-preview", height: 200 %>
+        <% if @old_tip.photo.present? %>
+          <%= cl_image_tag @old_tip.photo, width: 200, id: "photo-preview", height: 200 %>
+        <%else%>
+          <%= cl_image_tag @old_tip.google_pic, width: 200, id: "photo-preview", height: 200 %>
+        <%end%>
         <div class="form-actions">
           <div class="d-flex justify-content-between align-items-center" style="margin-top: -30px">
             <%= link_to "Cancel", get_inspired_path, class: "mr-5 ml-3"%>
