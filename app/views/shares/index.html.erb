@@ -18,13 +18,14 @@
             <% end %>
             <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest).created_at}").strftime("%d/%m/%Y")%></p>
           </div>
+          <div class= "d-flex">
           <div class="lists-shared">
             <p class="number-of-lists" style="text-align: center; font-size: 22px;"><%=@guests_lists_count[counter] %></p>
             <% counter += 1 %>
             <p style="text-align: center; font-size: 16px;">lists shared</p>
           </div>
-          <div>
-            <p>></p>
+
+            <p style="padding-top: 20px; padding-left: 21px;">></p>
           </div>
         </div>
       <% end %>
