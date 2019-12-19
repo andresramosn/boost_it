@@ -25,9 +25,17 @@
             <%=  my_tip.title %>
             </h2>
           </div>
+
+
           <p class="list-card-review">
-            <%=  my_tip.review[0, 83] %> ...
-          </p>
+              <% if my_tip.review.length <= 83 %>
+                <%=  my_tip.review[0, 83] %>
+              <% else %>
+                <%=  my_tip.review[0, 83] %> ...
+              <% end %>
+            </p>
+
+
           <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
             <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
 
