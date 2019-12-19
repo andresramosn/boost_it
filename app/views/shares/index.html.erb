@@ -15,7 +15,7 @@
               <p class="guest-mail" style="font-size: 16px;"><%="#{User.find(guest).email}" %></p>
               <% else %>
 
-              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email[0, 16]}" %>...</p>
+              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email[0, 14]}" %>...</p>
 
             <% end %>
             <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest).created_at}").strftime("%d/%m/%Y")%></p>
