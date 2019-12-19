@@ -24,7 +24,6 @@ class TipsController < ApplicationController
     else
       @tips = Tip.where(category: params[:filter])
     end
-
   end
 
   def add_to_list
@@ -34,21 +33,40 @@ class TipsController < ApplicationController
   end
 
   def create
-    @tip = Tip.new(tip_params)
-    @tip.user = current_user
-    list = List.find_by(name: params[:lists])
-    if params[:lists].present?
-      if @tip.save
-        ListTip.create(tip_id: @tip.id, list_id: list.id)
-          redirect_to tip_path(@tip) # redirecting to lists
+    if params[:old_tip].nil?
+      @tip = Tip.new(tip_params)
+      @tip.user = current_user
+      list = List.find_by(name: params[:lists])
+      if params[:lists].present?
+        if @tip.save
+          ListTip.create(tip_id: @tip.id, list_id: list.id)
+            redirect_to tip_path(@tip) # redirecting to lists
+        else
+          render :new
+        end
       else
-        render :new
+        if @tip.save
+          redirect_to tip_path(@tip) # redirecting to lists
+        else
+          render :new
+        end
       end
     else
-      if @tip.save
-        redirect_to tip_path(@tip) # redirecting to lists
+      @tip = Tip.find(params[:old_tip]).dup
+      @tip.review = tip_params[:review]
+      @tip.user_id = current_user.id
+      list = List.find_by(name: params[:lists])
+      if params[:lists].present?
+        if @tip.save
+          ListTip.create(tip_id: @tip.id, list_id: list.id)
+            redirect_to get_inspired_path # redirecting to lists
+        else
+        end
       else
-        render :new
+        if @tip.save
+          redirect_to get_inspired_path # redirecting to lists
+        else
+        end
       end
     end
   end
