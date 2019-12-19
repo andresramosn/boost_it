@@ -2,10 +2,11 @@
   <div class="d-flex">
     <a href="#">
       <%= link_to guests_path do %>
-      <%= image_tag "back.png", :style => "width: 5%"%>
+        <i class="fas fa-chevron-left" style="color: black; font-size: 1.3rem;"></i>
       <% end %>
     </a>
   </div>
+  <br>
 
   <h1 class="mb-3">Shared with <%= @guest.first_name %></h1>
 
@@ -30,7 +31,12 @@
   <% @unshared_lists.each do |list| %>
       <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id, path: "add"}) do%>
   <div class="card-container">
-    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
+              <% if list.tips.last.photo.present? %>
+                <%= list.tips.last.photo %>)
+              <% else %>
+               <%= list.tips.last.google_pic %>
+              <%end%>);">
       <p style="text-align: center"><%= "#{list.name}"%>
     </div>
   </div>
@@ -41,9 +47,15 @@
   <h2>Shared lists</h2>
   <% @shared_lists.each do |list| %>
   <div class="card-container">
-    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.tips.last.photo.present? %>
+                <%= list.tips.last.photo %>)
+              <% else %>
+               <%= list.tips.last.google_pic %>
+              <%end%>);">
       <p style="text-align: center"><%= "#{list.name}"%>
     </div>
   </div>
     <% end %>
 </div>
+
+
