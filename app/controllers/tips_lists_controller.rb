@@ -13,6 +13,7 @@ class TipsListsController < ApplicationController
     @tip.review = params[:tip][:review]
     @tip.category = params[:tip][:category]
     @tip.photo = params[:tip][:photo]
+    @tip.google_pic = params[:tip][:google_pic]
     @tip.user = current_user
     @tip.save!
     @tip_list = ListTip.new
