@@ -12,6 +12,12 @@ price_level.value = '<%= @spot.price_level %>'
 
 var google_pic = document.querySelector("#tip_google_pic")
 google_pic.value = '<%= @photo_url %>'
+
+
+var google_pic = document.querySelector(".api-preview")
+google_pic.style.backgroundImage = 'url(<%= @photo_url.gsub("\"", "") %>)'
+
+
 // console.log(google_pic.value)
 
 // console.log('<%= @spot.photos[0].photo_reference %>')

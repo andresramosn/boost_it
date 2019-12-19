@@ -18,7 +18,11 @@
     </div>
   <div id="show-info" >
     <div class="d-flex justify-content-end align-items-center" id= "photo-show-page" style="position: relative;">
-      <%= cl_image_tag @tip.photo if @tip.photo.present? %>
+      <% if @tip.photo.present? %>
+        <%= cl_image_tag @tip.photo %>
+      <% else %>
+        <img alt="tip-photo" src= <%= @tip.google_pic %> />
+      <% end %>
       <btn class="pill-category-show"> <%= @tip.category %> </btn>
     </div>
   </div>
@@ -36,15 +40,6 @@
   </div>
 </div>
 
-<%=@tip.price_level %>
 
 
 
-
-
-
-
-
-# <!--
-
-# (rating: 5, review: "Amazing place you really need to try", category: "Food", title: "Restaurante Igueldo", address: "Avenida Santiago", user_id: 1) -->
