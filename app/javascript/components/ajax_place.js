@@ -14,7 +14,7 @@ function inSleep() {
 
 function callAjax() {
   console.log("before sleep")
-  setTimeout(inSleep, 100);
+  setTimeout(inSleep, 50);
 }
 
 

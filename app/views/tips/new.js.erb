@@ -1,4 +1,4 @@
-console.log('<%= @spot %>')
+// console.log('<%= @spot %>')
 
 var title = document.querySelector("#tip_title")
 title.value = '<%= @spot.name %>'
@@ -7,11 +7,15 @@ var address = document.querySelector("#tip_address")
 address.value = '<%= @spot.formatted_address %>'
 
 var price_level = document.querySelector("#tip_price_level")
-console.log(price_level, '<%= @spot.price_level %>')
+// console.log(price_level, '<%= @spot.price_level %>')
 price_level.value = '<%= @spot.price_level %>'
 
-console.log('<%= @spot.photos[0].photo_reference %>')
-console.log('<%=@photo_url%>')
+var google_pic = document.querySelector("#tip_google_pic")
+google_pic.value = '<%= @photo_url %>'
+// console.log(google_pic.value)
+
+// console.log('<%= @spot.photos[0].photo_reference %>')
+// console.log('<%=@photo_url%>')
 
 // fetch(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=<%= @spot.photos[0].photo_reference %>&key=<%= ENV['GOOGLE_API']%>`)
 //   .then(response => response.json())

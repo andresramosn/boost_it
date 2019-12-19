@@ -8,6 +8,7 @@
         <%= c.input :address %>
         <%= c.input :review, label: 'Your personal recomendation' %>
         <%= c.input :price_level, as: :hidden %>
+        <%= c.input :google_pic, as: :hidden %>
         <%= c.input :category, label: 'Choose a category', collection: Tip::CATEGORIES %>
         List <br>
         <select name="lists" style="border-color: #CED4DA; background: white; width: 100%; padding: 7px; margin-bottom: 10px;">
