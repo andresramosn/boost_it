@@ -36,7 +36,7 @@
           <% if list_tip.tip.photo.present? %>
             <%= cl_image_path list_tip.tip.photo %>
           <% else %>
-            <%= cl_image_path list_tip.tip.google_pic %>
+            <%= cl_image_path list_tip.tip.google_pic if list_tip.tip.google_pic %>
           <%end%>); height: 200px; background-size: cover; border-radius: 5px;">
           <btn class="pill-category-tips-index <%= Tip::COLORS[list_tip.tip.category.to_sym] %>">
             <%=  list_tip.tip.category %>
