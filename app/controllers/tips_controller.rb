@@ -10,6 +10,7 @@ class TipsController < ApplicationController
       format.js {
         @place = params.keys.first
         @spot = @client.spots_by_query(@place).first
+        @photo_url = @spot.photos[0].fetch_url(800)
       }
       format.html
     end
@@ -57,7 +58,6 @@ class TipsController < ApplicationController
         lng: tip.longitude
       }
     end
-
   end
 
   def show
@@ -67,7 +67,6 @@ class TipsController < ApplicationController
       lat: @tip.latitude,
       lng: @tip.longitude
     }]
-
   end
 
   def edit
