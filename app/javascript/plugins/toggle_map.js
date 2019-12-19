@@ -13,14 +13,14 @@ const toggleMap = () => {
         location.classList.remove("d-none");
         info.classList.add("d-none");
         comment.classList.remove("d-none");
-        // photo.classList.add("d-none");
+        button.innerHTML = "SHOW INFO";
+
       } else {
         location.classList.add("d-none");
         info.classList.remove("d-none");
         comment.classList.remove("d-none");
+        button.innerHTML = "SHOW MAP";
       };
-      button.classList.toggle("add-button-show-map");
-      button.classList.toggle("add-button-show-map");
     });
   };
 };
