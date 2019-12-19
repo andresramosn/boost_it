@@ -35,7 +35,11 @@
               <% end %>
             </p>
           </div>
-          <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">
+          <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if my_tip.photo.present? %>
+            <%= my_tip.photo %>
+          <% else %>
+            <%= my_tip.google_pic %>
+          <%end%>); height: 200px;">
             <btn class="pill-category-tips-index <%= Tip::COLORS[my_tip.category.to_sym] %>">
 
               <%= my_tip.category %>
