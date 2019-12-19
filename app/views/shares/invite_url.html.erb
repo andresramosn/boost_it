@@ -1,12 +1,14 @@
 <div class="web-container">
-  <div class="d-flex justify-content-between">
+  <div class="d-flex">
     <a href="#">
       <%= link_to guests_path do %>
-      <%= image_tag "back.png", :style => "width: 5%"%>
+      <i class="fas fa-chevron-left" style="color: black; font-size: 1.3rem;"></i>
       <% end %>
     </a>
   </div>
+  <br>
   <h1>Congratulations!</h1>
+  <br>
   <p>An email with the invitation link has been sent to <%=User.find(params[:id]).first_name %>.</p>
   <br>
   <h2>Share through other media</h2>
@@ -16,15 +18,12 @@
       <p> I want to share with you my best tips from the city, in order to see them, just click in the following link:
       <%= link_to "start now!", User.find(params[:id]).invite_url, class: "invite-link", id: "my-input" %>
     </div>
-
-      <div class="d-flex justify-content-between align-items-center" style="margin-top: -30px">
+      <div class="d-flex justify-content-between align-items-center" style="margin-top: -30px; padding-right: 17px; padding-left: 32px;">
         <div id="copy-link-button">
-          <button style="color: #2578dd">Copy link</button>
+          <button style="color: black;">Copy link</button>
         </div>
         <%= link_to "CONTINUE", guests_show_path(guest_user_id: params[:id]), class:"add-button" %>
       </div>
-
-
   </div>
   <div style="text-indent: -1000em;">
     <input type="text" value="Hi <%=User.find(params[:id]).first_name %>, I want to share with you my best tips from the city, in order to see them, just click in the following link: <%= User.find(params[:id]).invite_url %>" id="my-input-dos">
