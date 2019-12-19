@@ -4,11 +4,15 @@
 }
 
 .guest-card {
-  border-top: solid 0.5px;
-  padding: 1px;
-  padding: 10px;
-  border-color: #808080a3;
-  align-items: center;
+    border: solid 0.5px;
+    padding: 1px;
+    padding: 10px;
+    border-color: #80808040;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 18px;
+
 }
 
 .guest-card p {
