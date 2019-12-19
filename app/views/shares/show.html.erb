@@ -7,12 +7,18 @@
     </a>
   </div>
 
-  <h1>Shared with <%= @guest.first_name %></h1>
+  <h1 class="mb-3">Shared with <%= @guest.first_name %></h1>
 
   <%# count lists and tips for guest%>
-  <div>
-  <h2>Number of lists shared: <%= @guest_lists %></h2>
-  <h2>Total tips shared: <%= @guest_tips %></h2>
+  <div class="d-flex justify-content-around lists-tips mt-3">
+    <div class="lists-shared">
+      <p class="number-of-lists" style="margin-bottom: 5px;text-align: center; font-size: 22px;"><%= @guest_lists %></p>
+      <p>Lists shared</p>
+    </div>
+    <div class="lists-shared">
+      <p class="number-of-lists" style="margin-bottom: 5px; text-align: center; font-size: 22px;"><%= @guest_tips %></p>
+      <p>Tips shared</p>
+    </div>
   </div>
 
 
@@ -32,7 +38,7 @@
 
     <% end %>
   <br>
-  <p>Shared lists</p>
+  <h2>Shared lists</h2>
   <% @shared_lists.each do |list| %>
   <div class="card-container">
     <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
