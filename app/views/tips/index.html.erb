@@ -28,7 +28,11 @@
           <div class="d-flex" style="margin-bottom: 12px;">
             <img class="avatar-show-page" alt="avatar-large" style="margin-top: 12px;"src="https://avatars2.githubusercontent.com/u/55089715?v=4" />
             <p class="list-card-review">
-              <%=  my_tip.review[0, 83] %> ...
+              <% if my_tip.review.length <= 83 %>
+                <%=  my_tip.review[0, 83] %>
+              <% else %>
+                <%=  my_tip.review[0, 83] %> ...
+              <% end %>
             </p>
           </div>
           <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= my_tip.photo %>); height: 200px;">

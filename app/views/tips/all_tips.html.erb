@@ -1,9 +1,26 @@
 <div class="web-container">
-  <div>
+  <div class="title and subtitle">
     <h1>Get Inspired</h1>
     <br>
-    <p id="p-centered">Add tips from other users to your lists.</p>
+    <p id="p-centered">Add tips from other users to your lists</p>
   </div>
+  <div class="button-container">
+    <%= link_to "FILTER","", class:"add-button avatar dropdown-toggle" , id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false  %>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= link_to "Restaurant", get_inspired_path(filter: "Restaurant"), class: "dropdown-item" %>
+          <%= link_to "Bar", get_inspired_path(filter: "Bar"), class: "dropdown-item" %>
+          <%= link_to "Cafe", get_inspired_path(filter: "Cafe"), class: "dropdown-item" %>
+          <%= link_to "Night Club", get_inspired_path(filter: "Night Club"), class: "dropdown-item" %>
+          <%= link_to "Park", get_inspired_path(filter: "Park"), class: "dropdown-item" %>
+          <%= link_to "Museum", get_inspired_path(filter: "Museum"), class: "dropdown-item" %>
+          <%= link_to "Attraction", get_inspired_path(filter: "Attraction"), class: "dropdown-item" %>
+          <%= link_to "Art Gallery", get_inspired_path(filter: "Art Gallery"), class: "dropdown-item" %>
+          <%= link_to "Casino", get_inspired_path(filter: "Casino"), class: "dropdown-item" %>
+          <%= link_to "All", get_inspired_path, class: "dropdown-item" %>
+        </div>
+  </div>
+
+  <% # ["Bar", "Art Gallery", "Cafe", "Casino", "Museum", "Night Club", "Park", "Restaurant", "Attraction"] %>
 
   <% @tips.each do |tip| %>
     <div class="tips-index-links relative">
