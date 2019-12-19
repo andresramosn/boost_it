@@ -36,7 +36,7 @@
   <div class="user-lists">
     <%= link_to tips_path do%>
       <div class="card-container">
-        <div class="list-card" id="list-card" style="height:125px; margin-top: 28px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.9), rgba(90, 1, 54, 0.9)), url(https://source.unsplash.com/random?restaurant);">
+        <div class="list-card" id="list-card" style="height:125px; margin-top: 20px; text-align: center; background-image: linear-gradient(rgba(90, 1, 54, 0.9), rgba(90, 1, 54, 0.9)), url(https://source.unsplash.com/random?restaurant);">
           <h2>All Tips</h2>
         </div>
       </div>
@@ -46,7 +46,12 @@
       <%= link_to list_path(list.id) do%>
         <div class="card-container">
           <% if(list.tips.sample) %>
-            <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.tips.last.photo %>);">
+            <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
+              <% if list.tips.last.photo.present? %>
+                <%= list.tips.last.photo %>);">
+              <% else %>
+               <%= list.tips.last.google_pic %>;">
+              <%end%>
               <h2> <%= list.name %> </h2>
             </div>
           <% else %>
@@ -67,7 +72,12 @@
           <%= link_to list_path(List.find(share.list_id)) do%>
             <div class="card-container">
               <% if(share.list.tips.first) %>
-                <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= List.find(share.list_id).tips.last.photo %>);">
+                <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
+                  <% if list.tips.last.photo.present? %>
+                    <%= List.find(share.list_id).tips.last.photo %>);">
+                  <% else %>
+                    <%= List.find(share.list_id).tips.last.google_pic %>;">
+                  <%end%>
                   <div style="text-align: center;">
                     <h2> <%= share.list.name %> </h2>
                     <p2> Shared by <%= User.find(share.list.user_id).first_name %> </p2>

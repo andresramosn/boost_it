@@ -12,9 +12,11 @@
           <div class="name-mail-date">
             <p class="guest-name" style="text-align: left; font-size: 22px;"><strong><%= "#{User.find(guest).first_name}"%></strong></p>
             <% if User.find(guest).email.length <= 20   %>
-              <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email}" %></p>
+              <p class="guest-mail" style="font-size: 16px;"><%="#{User.find(guest).email}" %></p>
               <% else %>
+
               <p class="guest-mail" style="font-size: 18px;"><%="#{User.find(guest).email[0, 16]}" %>...</p>
+
             <% end %>
             <p class="guest-since" style="font-size: 16px;">Guest since <%= Date.parse("#{User.find(guest).created_at}").strftime("%d/%m/%Y")%></p>
           </div>

@@ -1,4 +1,14 @@
 <div class="web-container">
+
+<% if  params[:tip].present?%>
+  <div class="flash flash-success alert alert-dismissible fade show" role="alert">
+    <span> <strong>Congrats!</strong> <%= Tip.find(params[:tip]).title%> has been added to your <%= params[:list]%> list!</span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+<% end %>
+
   <div class="title and subtitle">
     <h1 style="padding-top: 45px;">Get Inspired</h1>
     <br>
@@ -30,7 +40,11 @@
           <%=  tip.title %>
           </h2>
         </div>
-        <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= tip.photo %>); height: 200px; margin-top: 0px;">
+        <div class="list-card" style="position: relative; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url( <% if tip.photo.present? %>
+            <%= tip.photo %>
+          <% else %>
+            <%= tip.google_pic %>
+          <%end%>); height: 200px; margin-top: 0px;">
           <btn class="pill-category-tips-index <%= Tip::COLORS[tip.category.to_sym] %>">
             <%= tip.category %>
           </btn>
