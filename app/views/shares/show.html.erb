@@ -32,9 +32,9 @@
       <%= link_to guests_share_path({list_id: list.id, guest_user_id: @guest.id, path: "add"}) do%>
   <div class="card-container">
     <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(
-              <% if list.tips.last.photo.present? %>
-                <%= list.tips.last.photo %>)
-              <% else %>
+              <% if list.tips.present? && list.tips.last.photo.present? %>
+                <%= list.tips.last.photo %>
+              <% elsif list.tips.present? %>
                <%= list.tips.last.google_pic %>
               <%end%>);">
       <p style="text-align: center"><%= "#{list.name}"%>
@@ -47,9 +47,9 @@
   <h2>Shared lists</h2>
   <% @shared_lists.each do |list| %>
   <div class="card-container">
-    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.tips.last.photo.present? %>
+    <div class="list-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<% if list.tips.present? && list.tips.last.photo.present? %>
                 <%= list.tips.last.photo %>)
-              <% else %>
+              <% elsif list.tips.present? %>
                <%= list.tips.last.google_pic %>
               <%end%>);">
       <p style="text-align: center"><%= "#{list.name}"%>
