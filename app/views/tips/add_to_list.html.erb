@@ -6,7 +6,7 @@
         <%= c.input :title, input_html: {value: @old_tip.title}, label: 'Place', :readonly => true %>
         <%= c.input :address, input_html: {value: @old_tip.address}, :readonly => true %>
         <%= c.input :category, collection: Tip::CATEGORIES, selected: @old_tip.category, :readonly => true %>
-        <%= c.input :review, label: 'Your personal recomendation' %>
+        <%= c.input :review, label: 'Your personal recommendation' %>
         <input type="hidden" value="<%= @old_tip.id %>" name="old_tip">
         <%= c.input :price_level, as: :hidden, input_html: {value: @old_tip.price_level} %>
         List <br>
